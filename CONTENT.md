@@ -8,8 +8,8 @@ FR = French translation of the EN text directly above it.
 ## Identity
 
 - **Full name:** Karthikeyan Umesh
-- **Preferred name:** [PREFERRED NAME]
-- **Pronouns:** [PRONOUNS]
+- **Preferred name:** KARTHIK
+- **Pronouns:** HE/HIM
 - **Location:** Montréal / Toronto
 - **Languages:** English, French (bilingual)
 - **Current role / status:** [e.g. MSc student at Concordia, Software Engineer at X]
