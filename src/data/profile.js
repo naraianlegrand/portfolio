@@ -510,6 +510,7 @@ const en = {
 
   footer: {
     note: 'Built with React, Tailwind CSS and GSAP.',
+    analytics: 'This site uses privacy-friendly, cookieless analytics.',
   },
 }
 

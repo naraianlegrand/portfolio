@@ -1,3 +1,5 @@
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import { useLang } from './i18n'
 import SmoothScroll from './components/SmoothScroll'
 import Navbar from './components/Navbar'
@@ -36,6 +38,8 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <Analytics />
+      <SpeedInsights />
     </>
   )
 }

@@ -5,9 +5,12 @@ export default function Footer() {
   return (
     <footer className="border-t border-line py-10">
       <div className="container-x flex flex-col gap-4 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
-        <p>
-          © {new Date().getFullYear()} Karthikeyan Umesh. {t.footer.note}
-        </p>
+        <div className="flex flex-col gap-1">
+          <p>
+            © {new Date().getFullYear()} Karthikeyan Umesh. {t.footer.note}
+          </p>
+          <p>{t.footer.analytics}</p>
+        </div>
         <a href="#top" className="link-u">
           {t.ui.backToTop} <span aria-hidden="true">↑</span>
         </a>
