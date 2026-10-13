@@ -328,6 +328,13 @@ const en = {
       detail: 'Gina Cody School of Engineering and Computer Science',
       dates: 'May 2024 – May 2026',
       location: 'Montréal, Canada',
+      grade: 'GPA 3.29',
+      activities: [
+        'Moved from M.Eng. Quality Systems Engineering into Software Engineering (Sep 2024) to align my degree with my software and cloud goals, carrying my quality-assurance coursework into the new program',
+        'Board Member, Graduate Student Representative, Concordia Council on Student Life (CCSL): voted on funding for student-led initiatives',
+        'Event Coordinator, Concordia Filmmaking Club: organized events for the student film community',
+        "Volunteered at Concordia's used book fair in November",
+      ],
     },
     {
       degree: 'B.E. Computer Science Engineering',
@@ -437,6 +444,15 @@ const en = {
       {
         title: 'Welcome to Canada',
         body: 'PeaceGeeks featured my move from Bengaluru to Montréal in a newcomer story about their Welcome to Canada platform.',
+        // Stories with an image render full width with the image on top.
+        image: {
+          src: I + 'peacegeeks-1600.webp',
+          srcSet: `${I}peacegeeks-800.webp 800w, ${I}peacegeeks-1600.webp 1600w`,
+          width: 1600,
+          height: 480,
+          alt: 'PeaceGeeks story banner with Karthik and his quote: "Preparation is everything. The right resources can make all the difference. I\'d absolutely recommend newcomers use Welcome to Canada."',
+          credit: 'Image: PeaceGeeks',
+        },
         link: {
           label: 'Read the story',
           url: 'https://www.peacegeeks.org/blogs/from-bangalore-to-montreal-how-peacegeeks-tool-helped-karthik-find-confidence-and-build-a-new-life-in-canada',

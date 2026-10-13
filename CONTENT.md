@@ -299,7 +299,12 @@ I enjoy turning complex problems into practical solutions, combining analytical 
 - **Location:** Montréal, Quebec, Canada
 - **School:** Gina Cody School of Engineering and Computer Science
 - **Credits:** 45
-<!-- GPA intentionally omitted. -->
+- **GPA:** 3.29 <!-- Karthik asked to show it (2026-10-13) -->
+- **Activities:**
+  - Moved from M.Eng. Quality Systems Engineering into Software Engineering (Sep 2024) to align my degree with my software and cloud goals, carrying my quality-assurance coursework into the new program
+  - Board Member, Graduate Student Representative, Concordia Council on Student Life (CCSL): voted on funding for student-led initiatives
+  - Event Coordinator, Concordia Filmmaking Club: organized events for the student film community
+  - Volunteered at Concordia's used book fair in November <!-- year: [confirm] -->
 
 ### B.E. Computer Science Engineering — New Horizon College of Engineering
 
@@ -408,6 +413,7 @@ I studied French through MIFI at EMULCQ (near Vendôme station) for about a year
 Featured in PeaceGeeks' newcomer story about using their Welcome to Canada platform when moving from Bengaluru to Montréal.
 
 - **URL:** https://www.peacegeeks.org/blogs/from-bangalore-to-montreal-how-peacegeeks-tool-helped-karthik-find-confidence-and-build-a-new-life-in-canada
+- **Image:** public/images/peacegeeks-800.webp · public/images/peacegeeks-1600.webp (story banner with quote; credited "Image: PeaceGeeks"; full-width card)
 
 ### Personal
 

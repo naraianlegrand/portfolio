@@ -37,7 +37,7 @@ Personal portfolio site. `CONTENT.md` is the source of truth for all copy; `src/
 7. The Best Software Project Pitch Award (SOEN 6841) and the 2020 short-film award are separate achievements. Do not invent the film competition name, award attribution or IMDb link.
 8. PennyWise links to the Springer iPhone 11 paper and the IFERP/WCASET shopping-assistant paper, never to the Big Data in Google paper. No claimed model, dataset, accuracy or repo until recovered.
 9. No percentage for the Inventeron S3 workflow automation. Junior Engineer bullets are used exactly as supplied.
-10. Degree facts: M.Eng. Software Engineering, Concordia (transferred from Quality Systems Engineering, Sep 3, 2024; never list QSE as a completed degree). B.E. Computer Science Engineering, New Horizon College of Engineering, Aug 2019 – Jun 2023. No GPA for Concordia.
+10. Degree facts: M.Eng. Software Engineering, Concordia (transferred from Quality Systems Engineering, Sep 3, 2024; never list QSE as a completed degree). B.E. Computer Science Engineering, New Horizon College of Engineering, Aug 2019 – Jun 2023. Concordia GPA 3.29 (shown at Karthik's request). The QSE → Software Engineering move is framed as a deliberate choice, never as a separate degree.
 11. Headline is "Cloud & Software Developer" ("Engineer" is a protected title in Québec).
 12. The About section's three paragraphs are approved. Do not edit them unless Karthik asks.
 13. Phone number never appears on the site. Do not link a resume PDF that contains it.

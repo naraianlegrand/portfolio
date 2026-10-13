@@ -12,7 +12,9 @@ export default function Education() {
             <p className="font-mono text-xs uppercase tracking-wider text-muted">{e.dates}</p>
             <h3 className="mt-2 font-display text-3xl leading-tight">{e.degree}</h3>
             <p className="mt-1 text-paper/85">{e.school}</p>
-            <p className="text-sm text-muted">{[e.detail, e.location, e.grade].filter(Boolean).join(' · ')}</p>
+            {e.detail && <p className="text-sm text-muted">{e.detail}</p>}
+            <p className="text-sm text-muted">{e.location}</p>
+            {e.grade && <p className="mt-2 font-mono text-xs text-ember">{e.grade}</p>}
             {e.activities && (
               <ul className="mt-4 space-y-1.5 text-sm text-muted">
                 {e.activities.map((a) => (

@@ -48,9 +48,32 @@ export default function BeyondCode() {
   const b = t.beyond
   return (
     <Section id="beyond" index="07" title={b.title} intro={b.intro}>
-      <Reveal stagger className="grid gap-6 lg:grid-cols-3">
+      <Reveal stagger className="grid gap-6 lg:grid-cols-2">
         {b.stories.map((s) => (
-          <article key={s.title} className="flex flex-col rounded-2xl border border-line bg-ink-2 p-6 sm:p-8">
+          <article
+            key={s.title}
+            className={`flex flex-col overflow-hidden rounded-2xl border border-line bg-ink-2 ${s.image ? 'lg:col-span-2' : 'p-6 sm:p-8'}`}
+          >
+            {s.image && (
+              <figure className="relative">
+                <img
+                  src={s.image.src}
+                  srcSet={s.image.srcSet}
+                  sizes="(min-width: 1152px) 1104px, 92vw"
+                  alt={s.image.alt}
+                  width={s.image.width}
+                  height={s.image.height}
+                  loading="lazy"
+                  className="w-full h-auto"
+                />
+                {s.image.credit && (
+                  <figcaption className="absolute bottom-2 right-3 rounded bg-ink/70 px-2 py-0.5 font-mono text-[0.65rem] text-paper/80">
+                    {s.image.credit}
+                  </figcaption>
+                )}
+              </figure>
+            )}
+            <div className={s.image ? 'flex flex-col p-6 sm:p-8' : 'contents'}>
             <h3 className="font-display text-3xl">{s.title}</h3>
             <p className="mt-4 text-muted leading-relaxed">{s.body}</p>
             {s.link && (
@@ -59,6 +82,7 @@ export default function BeyondCode() {
                 <span className="sr-only"> (opens in a new tab)</span>
               </a>
             )}
+            </div>
           </article>
         ))}
       </Reveal>
