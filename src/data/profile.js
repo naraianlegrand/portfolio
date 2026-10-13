@@ -4,6 +4,9 @@
 
 const A = '/assets/'
 const I = '/images/' // photos: WebP, resized, all metadata stripped
+const IBM_BADGE = { src: A + 'ibm-logo.webp', alt: 'IBM logo' }
+const FILM_POSTER_ALT =
+  'Poster for the short film Delusions of Grandeur, directed by Karthikeyan Umesh, with laurels for Official Selection at CARV Karnataka 2020, 2nd Best Short Film at IIM Shortcuts 2019 and 3rd Best Short Film at Estrade St. Claret 2020'
 
 const en = {
   ui: {
@@ -79,8 +82,9 @@ const en = {
     },
     languagesTitle: 'Languages',
     languages: [
-      { name: 'English', level: 'Native or bilingual' },
-      { name: 'French', level: 'Full professional' },
+      // Credential logos render as a small tile beside the language.
+      { name: 'English', level: 'Native or bilingual', credential: { name: 'IELTS', score: 'Band 8', logo: { src: A + 'ielts-logo.webp', width: 96, height: 96, alt: 'IELTS logo' } } },
+      { name: 'French', level: 'Full professional', credential: { name: 'MIFI', score: 'Niveau 7', logo: { src: A + 'mifi-logo.webp', width: 241, height: 96, alt: 'Immigration, Francisation et Intégration Québec logo' } } },
       { name: 'Hindi', level: 'Full professional' },
       { name: 'Kannada', level: 'Native or bilingual' },
       { name: 'Tamil', level: 'Native or bilingual' },
@@ -364,9 +368,9 @@ const en = {
     { name: 'AWS Certified Cloud Practitioner', issuer: 'Amazon Web Services', date: 'Dec 2024 · valid to Dec 2027', badge: { src: A + 'aws-ccp-badge.png', alt: 'AWS Certified Cloud Practitioner badge' } },
     { name: 'AWS Certified Solutions Architect – Associate', issuer: 'Amazon Web Services', date: 'In progress' },
     { name: 'AWS re/Start', issuer: 'AWS, delivered by Vinsys IT Services', date: 'Sep – Dec 2023', detail: '12-week program: EC2, S3, RDS, IAM, VPC, Lambda, CloudWatch, Linux, Jenkins' },
-    { name: 'Data Science 101 (DS0101EN)', issuer: 'IBM', date: 'Nov 2022', credentialId: 'b2b41ac632984836b23d29a1cf2f69a3' },
-    { name: 'Data Science Tools (DS0105EN)', issuer: 'IBM', date: 'Nov 2022', credentialId: '9ef2d4e376064782a44bb08211df5fd4', file: A + 'ibm-ds0105-certificate.pdf' },
-    { name: 'Data Science Methodology (DS0103EN)', issuer: 'IBM', date: 'Nov 2022', credentialId: '4721648463274034a49fe8c5393d9f3f', file: A + 'ibm-ds0103-certificate.pdf' },
+    { name: 'Data Science 101 (DS0101EN)', issuer: 'IBM', date: 'Nov 2022', credentialId: 'b2b41ac632984836b23d29a1cf2f69a3', badge: IBM_BADGE },
+    { name: 'Data Science Tools (DS0105EN)', issuer: 'IBM', date: 'Nov 2022', credentialId: '9ef2d4e376064782a44bb08211df5fd4', file: A + 'ibm-ds0105-certificate.pdf', badge: IBM_BADGE },
+    { name: 'Data Science Methodology (DS0103EN)', issuer: 'IBM', date: 'Nov 2022', credentialId: '4721648463274034a49fe8c5393d9f3f', file: A + 'ibm-ds0103-certificate.pdf', badge: IBM_BADGE },
   ],
 
   publicationsTitle: 'Publications & Awards',
@@ -419,11 +423,12 @@ const en = {
       image: null, // pitch photo / screengrab pending
     },
     {
-      title: '2nd place, IIM National Level Short Film Festival',
-      org: 'Short film Delusions of Grandeur · Fully Filmy',
-      date: '2020',
-      detail: 'The work was viewed by Anupama Chopra.',
-      link: { label: 'IMDb profile', url: 'https://www.imdb.com/name/nm18409484/' },
+      title: '2nd Best Short Film, IIM Shortcuts Film Festival',
+      org: 'Delusions of Grandeur · awarded by Film Companion',
+      date: '2019',
+      detail: 'National-level festival; the work was viewed by Anupama Chopra. The film also won 3rd Best Short Film at the Estrade St. Claret Film Festival 2020 and was an Official Selection at the CARV Karnataka Film Festival 2020.',
+      image: { src: I + 'film-poster-480.webp', alt: FILM_POSTER_ALT, label: 'View poster', position: 'center 28%' },
+      link: { label: 'IMDb', url: 'https://www.imdb.com/name/nm18409484/' },
     },
   ],
 
@@ -433,12 +438,22 @@ const en = {
     stories: [
       {
         title: 'Filmmaking',
-        body: "I love making and directing short films. I've worked as Assistant Director on two short films, one of which is listed on IMDb, and my short film Delusions of Grandeur (Fully Filmy) placed 2nd at the IIM National Level Short Film Festival in 2020. From Sep 2025 to May 2026 I was Event Coordinator for the Concordia Filmmaking Club. Filmmaking has shaped how I approach storytelling, creative problem-solving, teamwork and coordination.",
+        body: "I love making and directing short films. I directed Delusions of Grandeur, which won 2nd Best Short Film at the IIM Shortcuts Film Festival 2019 (Film Companion) and 3rd Best Short Film at the Estrade St. Claret Film Festival 2020, and was an Official Selection at the CARV Karnataka Film Festival 2020. I've also worked as Assistant Director on two short films, one of which is listed on IMDb. From Sep 2025 to May 2026 I was Event Coordinator for the Concordia Filmmaking Club. Filmmaking has shaped how I approach storytelling, creative problem-solving, teamwork and coordination.",
+        // Portrait image: renders beside the text instead of as a banner on top.
+        image: {
+          src: I + 'film-poster-727.webp',
+          srcSet: `${I}film-poster-480.webp 480w, ${I}film-poster-727.webp 727w`,
+          width: 727,
+          height: 908,
+          alt: FILM_POSTER_ALT,
+          layout: 'side',
+        },
         link: { label: 'IMDb profile', url: 'https://www.imdb.com/name/nm18409484/' },
       },
       {
         title: 'Learning French',
         body: 'I studied French through MIFI at EMULCQ (near Vendôme station) for about a year and a half, alongside demanding coursework at Concordia. I completed the program through niveau 7 and was the only student in my class to continue through every level without dropping out. Today I converse in French in everyday and professional settings.',
+        badge: { src: A + 'mifi-logo.webp', width: 241, height: 96, alt: 'Immigration, Francisation et Intégration Québec logo', caption: 'MIFI · Niveau 7' },
         link: null,
       },
       {
@@ -499,7 +514,7 @@ const en = {
 
   contact: {
     title: 'Contact',
-    lead: "Open to new-grad, contract and part-time roles in software, cloud, AI automation and data. The fastest way to reach me is email.",
+    lead: "Open to full-time and part-time roles in software, cloud, AI automation and data, including new-grad and contract positions. The fastest way to reach me is email.",
     email: 'karthikeyanumesh@gmail.com',
     links: [
       { label: 'LinkedIn', url: 'https://linkedin.com/in/karthikeyanumesh' },

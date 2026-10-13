@@ -48,43 +48,55 @@ export default function BeyondCode() {
   const b = t.beyond
   return (
     <Section id="beyond" index="07" title={b.title} intro={b.intro}>
-      <Reveal stagger className="grid gap-6 lg:grid-cols-2">
-        {b.stories.map((s) => (
-          <article
-            key={s.title}
-            className={`flex flex-col overflow-hidden rounded-2xl border border-line bg-ink-2 ${s.image ? 'lg:col-span-2' : 'p-6 sm:p-8'}`}
-          >
-            {s.image && (
-              <figure className="relative">
-                <img
-                  src={s.image.src}
-                  srcSet={s.image.srcSet}
-                  sizes="(min-width: 1152px) 1104px, 92vw"
-                  alt={s.image.alt}
-                  width={s.image.width}
-                  height={s.image.height}
-                  loading="lazy"
-                  className="w-full h-auto"
-                />
-                {s.image.credit && (
-                  <figcaption className="absolute bottom-2 right-3 rounded bg-ink/70 px-2 py-0.5 font-mono text-[0.65rem] text-paper/80">
-                    {s.image.credit}
-                  </figcaption>
+      {/* Full-width stories: banner images sit on top, portrait images (layout: 'side') sit beside the text. */}
+      <Reveal stagger className="grid gap-6">
+        {b.stories.map((s) => {
+          const side = s.image?.layout === 'side'
+          return (
+            <article
+              key={s.title}
+              className={`overflow-hidden rounded-2xl border border-line bg-ink-2 ${side ? 'grid md:grid-cols-[minmax(0,2fr)_3fr]' : 'flex flex-col'}`}
+            >
+              {s.image && (
+                <figure className={`relative ${side ? 'border-b border-line md:border-b-0 md:border-r' : ''}`}>
+                  <img
+                    src={s.image.src}
+                    srcSet={s.image.srcSet}
+                    sizes={side ? '(min-width: 1152px) 440px, (min-width: 768px) 40vw, 92vw' : '(min-width: 1152px) 1104px, 92vw'}
+                    alt={s.image.alt}
+                    width={s.image.width}
+                    height={s.image.height}
+                    loading="lazy"
+                    className={side ? 'mx-auto h-full w-full max-w-sm object-cover object-top md:max-w-none' : 'w-full h-auto'}
+                  />
+                  {s.image.credit && (
+                    <figcaption className="absolute bottom-2 right-3 rounded bg-ink/70 px-2 py-0.5 font-mono text-[0.65rem] text-paper/80">
+                      {s.image.credit}
+                    </figcaption>
+                  )}
+                </figure>
+              )}
+              <div className={`flex flex-col p-6 sm:p-8 ${side ? 'md:justify-center lg:p-12' : ''}`}>
+                <div className="flex items-start justify-between gap-6">
+                  <h3 className="font-display text-3xl">{s.title}</h3>
+                  {s.badge && (
+                    <figure className="flex shrink-0 flex-col items-end gap-1.5">
+                      <img src={s.badge.src} alt={s.badge.alt} width={s.badge.width / 2} height={s.badge.height / 2} loading="lazy" className="h-12 w-auto rounded-md" />
+                      <figcaption className="font-mono text-xs text-ember">{s.badge.caption}</figcaption>
+                    </figure>
+                  )}
+                </div>
+                <p className="mt-4 max-w-3xl text-muted leading-relaxed">{s.body}</p>
+                {s.link && (
+                  <a href={s.link.url} target="_blank" rel="noreferrer" className={`link-u self-start pt-5 text-sm ${side ? '' : 'mt-auto'}`}>
+                    {s.link.label} <span aria-hidden="true">↗</span>
+                    <span className="sr-only"> (opens in a new tab)</span>
+                  </a>
                 )}
-              </figure>
-            )}
-            <div className={s.image ? 'flex flex-col p-6 sm:p-8' : 'contents'}>
-            <h3 className="font-display text-3xl">{s.title}</h3>
-            <p className="mt-4 text-muted leading-relaxed">{s.body}</p>
-            {s.link && (
-              <a href={s.link.url} target="_blank" rel="noreferrer" className="link-u mt-auto pt-5 text-sm">
-                {s.link.label} <span aria-hidden="true">↗</span>
-                <span className="sr-only"> (opens in a new tab)</span>
-              </a>
-            )}
-            </div>
-          </article>
-        ))}
+              </div>
+            </article>
+          )
+        })}
       </Reveal>
 
       <Reveal className="mt-12 rounded-2xl border border-line bg-ink-2 px-6 py-8 sm:px-10">

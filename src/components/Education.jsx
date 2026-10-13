@@ -51,7 +51,7 @@ export default function Education() {
           {t.certifications.map((c) => (
             <li key={c.name} className="flex gap-4 rounded-2xl border border-line bg-ink-2 p-5">
               {c.badge && (
-                <img src={c.badge.src} alt={c.badge.alt} width="64" height="64" loading="lazy" className="h-16 w-16 shrink-0" />
+                <img src={c.badge.src} alt={c.badge.alt} width="64" height="64" loading="lazy" className="h-16 w-16 shrink-0 rounded-xl" />
               )}
               <div className="min-w-0">
                 <p className="font-medium leading-snug">{c.name}</p>

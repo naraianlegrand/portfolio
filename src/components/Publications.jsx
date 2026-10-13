@@ -52,6 +52,7 @@ export default function Publications() {
                       width="96"
                       height="68"
                       loading="lazy"
+                      style={a.image.position && { objectPosition: a.image.position }}
                       className="h-[68px] w-24 rounded-md border border-line object-cover transition-transform group-hover/img:scale-105"
                     />
                     <span className="link-u">{a.image.label} <span aria-hidden="true">↗</span></span>

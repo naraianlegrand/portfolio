@@ -37,7 +37,7 @@ ACCURACY RULES (from the consolidated handoff, 2026-10-12)
 - **Location:** Montréal / Toronto (open to relocation across Canada)
 - **Current role / status:** M.Eng. Software Engineering graduate, Concordia (May 2026). Open to work.
 - **Professional identity:** Software Engineering graduate with interests and experience spanning software development, cloud computing, AI-driven automation, data science and technical project leadership.
-- **Open to:** Software engineering, cloud, AI automation and data-related engineering roles. New-grad, contract and part-time roles.
+- **Open to:** Software engineering, cloud, AI automation and data-related engineering roles. Full-time and part-time roles, including new-grad and contract positions.
 - **Photo (hero):** public/images/hero-480.webp · public/images/hero-720.webp · public/images/hero-1000.webp <!-- from portfolio-assets/Hero Image.jpeg (Place des Arts, Montréal); WebP, metadata stripped -->
 - **Photo (About):** public/images/grad-480.webp · public/images/grad-800.webp — caption "Concordia convocation, 2026" <!-- from portfolio-assets/Karthik_Grad.jpg, cropped, metadata stripped -->
 - **Resume PDF (EN):** [PLACEHOLDER: public/resume/Karthikeyan-Umesh-Resume.pdf, phone-free] <!-- Set hero.resume in profile.js once added; button stays hidden until then. Resume_Karthik_General.pdf contains the phone number: do not link it -->
@@ -49,8 +49,8 @@ ACCURACY RULES (from the consolidated handoff, 2026-10-12)
 
 | Language | Proficiency |
 |----------|-------------|
-| English | Native or bilingual |
-| French | Full professional (self-reported; no certified level) |
+| English | Native or bilingual · IELTS Band 8 (logo: public/assets/ielts-logo.webp) |
+| French | Full professional · MIFI Niveau 7 (logo: public/assets/mifi-logo.webp) |
 | Hindi | Full professional |
 | Kannada | Native or bilingual |
 | Tamil | Native or bilingual |
@@ -349,7 +349,7 @@ I enjoy turning complex problems into practical solutions, combining analytical 
 | AWS Certified Cloud Practitioner | Amazon Web Services | Dec 2024 (expires Dec 2027) | [URL] | portfolio-assets/aws_badge.png |
 | AWS Certified Solutions Architect – Associate | Amazon Web Services | In progress | — | — |
 | AWS re/Start (12-week program) | AWS, delivered by Vinsys IT Services | Sep – Dec 2023 (certificate Dec 2023) | [URL] | [path] |
-| IBM Certified Data Science – Data Science 101 (DS0101EN) | IBM | Nov 2022 | ID b2b41ac632984836b23d29a1cf2f69a3 | [badge/PDF pending] |
+| IBM Certified Data Science – Data Science 101 (DS0101EN) | IBM | Nov 2022 | ID b2b41ac632984836b23d29a1cf2f69a3 | [PDF pending] |
 | IBM Certified Data Science – Data Science Tools (DS0105EN) | IBM | Nov 2022 | ID 9ef2d4e376064782a44bb08211df5fd4 | portfolio-assets/ibm 1 cert.pdf |
 | IBM Data Science Methodology (DS0103EN) | IBM | Nov 2022 | ID 4721648463274034a49fe8c5393d9f3f | portfolio-assets/ibm 2 cert.pdf |
 
@@ -379,7 +379,8 @@ I enjoy turning complex problems into practical solutions, combining analytical 
 - **Best Paper Award — WCASET 2022.** For "Product Price Rate Detection Using Regression Models and Shopping Assistant" at the 43rd World Conference on Applied Science, Engineering & Technology, organized by Padre Conceição College of Engineering in association with the Institute For Engineering, Research and Publication (IFERP), Dec 29–30, 2022, Goa, India.
   - **Image:** portfolio-assets/Certificate_best Paper.jpg
 - **Best Software Project Pitch Award — Concordia University, 2024.** For the AI-Based Academic Advisor project (SOEN 6841); delivered an Apple Keynote-style presentation that received a standing ovation.
-- **2nd place, IIM National Level Short Film Festival, 2020.** Short film *Delusions of Grandeur* (Fully Filmy); the work was viewed by Anupama Chopra. IMDb: https://www.imdb.com/name/nm18409484/
+- **2nd Best Short Film, IIM Shortcuts Film Festival, 2019** (awarded by Film Companion; national level). Short film *Delusions of Grandeur*, directed by Karthik; the work was viewed by Anupama Chopra. Also 3rd Best Short Film, Estrade St. Claret Film Festival 2020, and Official Selection, CARV Karnataka Film Festival 2020. IMDb: https://www.imdb.com/name/nm18409484/
+  - **Image:** public/images/film-poster-480.webp · public/images/film-poster-727.webp <!-- from portfolio-assets/IIM shortfilm Poster award.jpeg; award facts taken from this poster -->
 - **Best Software Project Pitch Award** image: [PLACEHOLDER: presentation photo or screengrab] <!-- card shows a thumbnail + link like the Best Paper one once added -->
 
 ---
@@ -392,7 +393,7 @@ I enjoy turning complex problems into practical solutions, combining analytical 
 
 ### Filmmaking and creative leadership
 
-I love making and directing short films. I've worked as Assistant Director on two short films, one of which is listed on IMDb, and my short film *Delusions of Grandeur* (Fully Filmy) placed 2nd at the IIM National Level Short Film Festival in 2020. From Sep 2025 to May 2026 I was Event Coordinator for the Concordia Filmmaking Club. Filmmaking has shaped how I approach storytelling, creative problem-solving, teamwork and coordination.
+I love making and directing short films. I directed *Delusions of Grandeur*, which won 2nd Best Short Film at the IIM Shortcuts Film Festival 2019 (Film Companion) and 3rd Best Short Film at the Estrade St. Claret Film Festival 2020, and was an Official Selection at the CARV Karnataka Film Festival 2020. I've also worked as Assistant Director on two short films, one of which is listed on IMDb. From Sep 2025 to May 2026 I was Event Coordinator for the Concordia Filmmaking Club. Filmmaking has shaped how I approach storytelling, creative problem-solving, teamwork and coordination.
 
 - **Film titles / AD credits:** [pending]
 - **IMDb link:** https://www.imdb.com/name/nm18409484/ (profile)

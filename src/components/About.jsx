@@ -29,19 +29,38 @@ export default function About() {
               {a.photo.caption && <figcaption className="px-5 py-3 font-mono text-xs text-muted">{a.photo.caption}</figcaption>}
             </figure>
           )}
-          <div aria-labelledby="languages-title" className="rounded-2xl border border-line bg-ink-2 p-6">
-            <h3 id="languages-title" className="eyebrow mb-4">{a.languagesTitle}</h3>
-            <dl className="divide-y divide-line">
-              {a.languages.map((l) => (
-                <div key={l.name} className="flex items-baseline justify-between gap-4 py-2.5">
-                  <dt>{l.name}</dt>
-                  <dd className="text-sm text-muted text-right">{l.level}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
         </Reveal>
       </div>
+
+      {/* Full width under the bio and photo, like the PeaceGeeks story, so no column is left half empty. */}
+      <Reveal className="mt-12">
+        <h3 id="languages-title" className="eyebrow mb-5">{a.languagesTitle}</h3>
+        <ul aria-labelledby="languages-title" className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {a.languages.map((l) => (
+            <li key={l.name} className="flex min-h-24 items-center justify-between gap-4 rounded-2xl border border-line bg-ink-2 p-5">
+              <div className="min-w-0">
+                <p className="font-display text-2xl leading-tight">{l.name}</p>
+                <p className="text-sm text-muted">{l.level}</p>
+              </div>
+              {l.credential && (
+                <div className="flex shrink-0 flex-col items-end gap-1.5">
+                  <img
+                    src={l.credential.logo.src}
+                    alt={l.credential.logo.alt}
+                    width={l.credential.logo.width / 2}
+                    height={l.credential.logo.height / 2}
+                    loading="lazy"
+                    className="h-12 w-auto rounded-md"
+                  />
+                  <p className="font-mono text-xs text-ember">
+                    {l.credential.name} · {l.credential.score}
+                  </p>
+                </div>
+              )}
+            </li>
+          ))}
+        </ul>
+      </Reveal>
     </Section>
   )
 }
