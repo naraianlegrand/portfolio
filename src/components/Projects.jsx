@@ -111,10 +111,27 @@ function ChronicleCard({ p, ui }) {
   )
 }
 
-function Figure({ img, className = '' }) {
+// `thumb` crops to a uniform tile (top-aligned) and links to the full image, for multi-image grids.
+function Figure({ img, className = '', thumb = false }) {
+  const image = (
+    <img
+      src={img.src}
+      alt={img.alt}
+      width={img.width}
+      height={img.height}
+      loading="lazy"
+      className={thumb ? 'aspect-[4/3] w-full bg-white object-contain p-1.5 transition-transform duration-500 group-hover/fig:scale-[1.03]' : 'w-full h-auto'}
+    />
+  )
   return (
     <figure className={`overflow-hidden rounded-xl border border-line bg-ink-3 ${className}`}>
-      <img src={img.src} alt={img.alt} width={img.width} height={img.height} loading="lazy" className="w-full h-auto" />
+      {thumb ? (
+        <a href={img.src} target="_blank" rel="noreferrer" className="group/fig block" aria-label={`${img.alt} (open full image in a new tab)`}>
+          {image}
+        </a>
+      ) : (
+        image
+      )}
     </figure>
   )
 }
@@ -193,7 +210,7 @@ function ProjectCard({ p, ui, publications }) {
 
       {p.images.length > 0 && (
         <div className={`mt-5 grid gap-3 ${p.images.length > 1 ? 'grid-cols-2' : ''}`}>
-          {p.images.map((img) => <Figure key={img.src} img={img} />)}
+          {p.images.map((img) => <Figure key={img.src} img={img} thumb={p.images.length > 1} />)}
         </div>
       )}
 

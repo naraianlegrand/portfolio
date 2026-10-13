@@ -3,6 +3,7 @@
 // French (`fr`) is deferred: add a full object with the same shape to enable the language toggle.
 
 const A = '/assets/'
+const I = '/images/' // photos: WebP, resized, all metadata stripped
 
 const en = {
   ui: {
@@ -45,10 +46,12 @@ const en = {
     location: 'Montréal / Toronto · open to relocation across Canada',
     status: 'Open to work',
     photo: {
-      src: A + 'karthik.jpg',
-      srcSet: `${A}karthik-520.jpg 520w, ${A}karthik.jpg 900w`,
-      srcSetWebp: `${A}karthik-520.webp 520w, ${A}karthik.webp 900w`,
-      alt: 'Karthikeyan Umesh in graduation robes, holding his Concordia diploma folder' },
+      src: I + 'hero-1000.webp',
+      srcSet: `${I}hero-480.webp 480w, ${I}hero-720.webp 720w, ${I}hero-1000.webp 1000w`,
+      width: 1000,
+      height: 1333,
+      alt: 'Karthikeyan Umesh in a dark suit at Place des Arts, Montréal, on a sunny day',
+    },
     ctas: [
       { label: 'See my work', href: '#projects' },
       { label: 'Get in touch', href: '#contact' },
@@ -163,7 +166,14 @@ const en = {
       tools: ['Project planning', 'Gantt charts', 'Milestone planning', 'Requirements analysis', 'Risk management', 'Feasibility & viability analysis', 'Budget planning', 'Solution visualization'],
       repo: { url: 'https://github.com/Riyaguptacse/soen6841f24', private: false },
       live: null,
-      images: [],
+      // README screenshot shows teammates' names and student IDs; Karthik OK'd it for now (may replace later).
+      images: [
+        { src: I + 'advisor-readme.webp', alt: 'The AI-Based Academic Advisor repository README: project overview and team members', width: 1200, height: 536 },
+        { src: I + 'advisor-features.webp', alt: 'Proposal table of planned features: personalized course suggestions, academic tracking and alerts, career path guidance, LMS/SIS integration, gamified engagement', width: 1200, height: 548 },
+        { src: I + 'advisor-process.webp', alt: 'Process flow diagram: student logs in, enters course preferences, the advisor retrieves academic data and presents top-ranked courses', width: 1000, height: 1425 },
+        { src: I + 'advisor-gantt.webp', alt: 'Gantt chart of the five proposed project phases from November 2024 to March 2025', width: 1400, height: 776 },
+        { src: I + 'advisor-risk.webp', alt: 'Risk impact analysis chart rating impact, likelihood and priority for each project risk', width: 1200, height: 566 },
+      ],
     },
     {
       id: 'cloud-tech',
@@ -445,10 +455,13 @@ const en = {
     travelTitle: 'Travel',
     // Cards without a photo are hidden; the whole gallery hides when none have photos.
     travel: [
+      { place: 'Montréal', when: 'Oct 2026', caption: 'Heading out from Montréal Metropolitan Airport', photo: { src: I + 'travel-met-airport.webp', alt: 'Karthik outside Montréal Metropolitan Airport (MET), next to the terminal sign', width: 640, height: 853 } },
+      { place: 'Edmonton', when: 'Oct 2026', caption: 'West Edmonton Mall', photo: { src: I + 'travel-edmonton-mall.webp', alt: 'Karthik under the glass roof of West Edmonton Mall, with pink swan boats behind him', width: 640, height: 1138 } },
+      { place: 'Edmonton', when: 'Oct 2026', caption: 'Royal Alberta Museum', photo: { src: I + 'travel-edmonton-museum.webp', alt: 'Karthik in front of a dinosaur skeleton exhibit at the Royal Alberta Museum', width: 640, height: 1138 } },
+      { place: 'Edmonton', when: 'Oct 2026', caption: 'The river valley at night, Legislature dome in the distance', photo: { src: I + 'travel-edmonton-night.webp', alt: 'Karthik on a bridge at night with the Edmonton skyline and the lit Alberta Legislature dome behind him', width: 640, height: 1138 } },
       { place: 'Toronto', when: 'Dec 2024', caption: 'AWS Cloud Practitioner exam', photo: null },
       { place: 'India', when: 'Summer 2025', caption: '21-day trip', photo: null },
       { place: 'Toronto', when: 'Jun 2026', caption: null, photo: null },
-      { place: 'Edmonton', when: 'Oct 2026', caption: null, photo: null },
     ],
   },
 

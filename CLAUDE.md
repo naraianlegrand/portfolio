@@ -16,7 +16,8 @@ Personal portfolio site. `CONTENT.md` is the source of truth for all copy; `src/
 - `src/components/` — one component per section, plus `Reveal.jsx` (IntersectionObserver + CSS scroll reveal) and `SmoothScroll.jsx` (Lenis, lazy-loaded, off on touch devices)
 - `src/motion.js` — `loadGsap()` lazy-loads GSAP so it stays out of the critical bundle
 - `src/entry-server.jsx` + `scripts/prerender.js` — build-time prerender; `main.jsx` hydrates when HTML is present
-- `public/assets/` — web copies of images from `../portfolio-assets/` (renamed, resized, WebP where possible)
+- `public/assets/` — screenshots, badges, certificates from `../portfolio-assets/` (renamed, resized, WebP where possible)
+- `public/images/` — photos (hero, travel) and diagrams: WebP, converted to sRGB, all EXIF/XMP/ICC metadata stripped. Never publish a photo with GPS or other metadata.
 
 ## Performance rules
 

@@ -38,7 +38,7 @@ ACCURACY RULES (from the consolidated handoff, 2026-10-12)
 - **Current role / status:** M.Eng. Software Engineering graduate, Concordia (May 2026). Open to work.
 - **Professional identity:** Software Engineering graduate with interests and experience spanning software development, cloud computing, AI-driven automation, data science and technical project leadership.
 - **Open to:** Software engineering, cloud, AI automation and data-related engineering roles. New-grad, contract and part-time roles.
-- **Photo:** portfolio-assets/Karthik_Grad.jpg
+- **Photo (hero):** public/images/hero-480.webp · public/images/hero-720.webp · public/images/hero-1000.webp <!-- from portfolio-assets/Hero Image.jpeg (Place des Arts, Montréal); WebP, metadata stripped. Replaces Karthik_Grad.jpg -->
 - **Resume PDF (EN):** [path to a phone-free resume] <!-- Resume_Karthik_General.pdf contains the phone number: do not link it -->
 - **Resume PDF (FR):** deferred
 
@@ -144,7 +144,7 @@ I enjoy turning complex problems into practical solutions, combining analytical 
 - **Tools and methods:** Software project management, project planning, Gantt charts, milestone and timeline planning, requirements analysis, risk management, feasibility and viability analysis, budget planning, solution visualization <!-- No software stack: do not invent one -->
 - **Live URL:** n/a
 - **Repo URL:** https://github.com/Riyaguptacse/soen6841f24
-- **Screenshot(s):** [paths]
+- **Screenshot(s):** public/images/advisor-readme.webp · public/images/advisor-features.webp · public/images/advisor-process.webp · public/images/advisor-gantt.webp · public/images/advisor-risk.webp <!-- advisor-readme shows teammates' names and student IDs: OK'd by Karthik for now, may replace later -->
 
 ### Cloud Tech — AWS Learning Website
 
@@ -413,14 +413,18 @@ Diligent note-taker, hard worker, avid French learner. I enjoy travel and organi
 
 ### Travel gallery (optional)
 
-<!-- Placeholders only. Hide cards without photos. -->
+<!-- Cards without photos are hidden. Photos are WebP, 640px wide, all metadata stripped.
+     Confirmed by Karthik: all four are from the Edmonton trip, Oct 2026. -->
 
 | Place | When | Caption | Photo |
 |-------|------|---------|-------|
+| Montréal | Oct 2026 | Heading out from Montréal Metropolitan Airport | public/images/travel-met-airport.webp |
+| Edmonton | Oct 2026 | West Edmonton Mall | public/images/travel-edmonton-mall.webp |
+| Edmonton | Oct 2026 | Royal Alberta Museum | public/images/travel-edmonton-museum.webp |
+| Edmonton | Oct 2026 | The river valley at night, Legislature dome in the distance | public/images/travel-edmonton-night.webp |
 | Toronto | Dec 2024 | AWS Cloud Practitioner exam | [path] |
 | India | Summer 2025 | 21-day trip | [path] |
 | Toronto | Late Jun 2026 | [caption] | [path] |
-| Edmonton | Oct 1–10, 2026 | [caption] | [path] |
 
 ---
 

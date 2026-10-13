@@ -12,7 +12,14 @@ function TravelGallery({ title, items }) {
         {withPhotos.map((i) => (
           <li key={i.place + i.when}>
             <figure className="overflow-hidden rounded-2xl border border-line bg-ink-2">
-              <img src={i.photo.src} alt={i.photo.alt} loading="lazy" className="aspect-[4/5] w-full object-cover" />
+              <img
+                src={i.photo.src}
+                alt={i.photo.alt}
+                width={i.photo.width}
+                height={i.photo.height}
+                loading="lazy"
+                className="aspect-[3/4] w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
+              />
               <figcaption className="p-4 text-sm">
                 <span className="font-display text-lg">{i.place}</span>
                 <span className="text-muted"> · {i.when}</span>

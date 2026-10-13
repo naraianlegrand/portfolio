@@ -75,19 +75,16 @@ export default function Hero() {
         {h.photo && (
           <div data-hero-photo className="relative mx-auto w-full max-w-sm md:max-w-none">
             <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-ember/30 to-transparent blur-2xl" aria-hidden="true" />
-            <picture>
-              <source type="image/webp" srcSet={h.photo.srcSetWebp} sizes="(min-width: 768px) 40vw, 92vw" />
-              <img
-                src={h.photo.src}
-                srcSet={h.photo.srcSet}
-                sizes="(min-width: 768px) 40vw, 92vw"
-                alt={h.photo.alt}
-                width="900"
-                height="1334"
-                fetchPriority="high"
-                className="relative aspect-[4/5] w-full rounded-[1.75rem] object-cover object-[50%_25%] border border-line"
-              />
-            </picture>
+            <img
+              src={h.photo.src}
+              srcSet={h.photo.srcSet}
+              sizes="(min-width: 768px) 40vw, 92vw"
+              alt={h.photo.alt}
+              width={h.photo.width}
+              height={h.photo.height}
+              fetchPriority="high"
+              className="relative aspect-[4/5] w-full rounded-[1.75rem] object-cover object-[50%_30%] border border-line"
+            />
           </div>
         )}
       </div>
