@@ -120,7 +120,7 @@ function Figure({ img, className = '', thumb = false }) {
       width={img.width}
       height={img.height}
       loading="lazy"
-      className={thumb ? 'aspect-[4/3] w-full bg-white object-contain p-1.5 transition-transform duration-500 group-hover/fig:scale-[1.03]' : 'w-full h-auto'}
+      className={thumb ? 'aspect-[4/3] w-full object-contain p-1.5 transition-transform duration-500 group-hover/fig:scale-[1.03]' : 'w-full h-auto'}
     />
   )
   return (
@@ -162,7 +162,7 @@ function FeaturedCard({ p, ui }) {
 function ProjectCard({ p, ui, publications }) {
   const related = (p.related || []).map((id) => publications.find((x) => x.id === id)).filter(Boolean)
   return (
-    <article aria-labelledby={`${p.id}-title`} className="group flex flex-col rounded-2xl border border-line bg-ink-2 p-6 transition-colors duration-300 hover:border-ember/50">
+    <article aria-labelledby={`${p.id}-title`} className="group flex w-full flex-col rounded-2xl border border-line bg-ink-2 p-6 transition-colors duration-300 hover:border-ember/50">
       <div className="mb-4 flex flex-wrap items-center gap-2">
         <Status>{p.status}</Status>
       </div>
@@ -210,7 +210,10 @@ function ProjectCard({ p, ui, publications }) {
 
       {p.images.length > 0 && (
         <div className={`mt-5 grid gap-3 ${p.images.length > 1 ? 'grid-cols-2' : ''}`}>
-          {p.images.map((img) => <Figure key={img.src} img={img} thumb={p.images.length > 1} />)}
+          {p.images.map((img, i) => (
+            // With an odd count, the first image spans both columns so no tile sits alone.
+            <Figure key={img.src} img={img} thumb={p.images.length > 1} className={i === 0 && p.images.length > 1 && p.images.length % 2 ? 'col-span-2' : ''} />
+          ))}
         </div>
       )}
 
@@ -231,7 +234,8 @@ export default function Projects() {
         <ChronicleCard p={chronicle} ui={t.ui} />
         {featured.map((p) => <FeaturedCard key={p.id} p={p} ui={t.ui} />)}
       </div>
-      <Reveal stagger className="mt-8 grid items-start gap-6 md:grid-cols-2">
+      {/* Masonry columns: cards of different heights pack without holes. */}
+      <Reveal stagger className="mt-8 gap-6 md:columns-2 [&>*]:mb-6 [&>*]:break-inside-avoid">
         {t.projects.map((p) => (
           <ProjectCard key={p.id} p={p} ui={t.ui} publications={t.publications} />
         ))}

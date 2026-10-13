@@ -2,11 +2,21 @@ import { useLang } from '../i18n'
 import Section from './Section'
 import Reveal from './Reveal'
 
+// Round-robin across places so one trip doesn't fill a whole row (Edmonton, Toronto, Edmonton, …).
+function interleaveByPlace(items) {
+  const groups = new Map()
+  items.forEach((i) => groups.set(i.place, [...(groups.get(i.place) || []), i]))
+  const queues = [...groups.values()]
+  const out = []
+  while (queues.some((q) => q.length)) queues.forEach((q) => q.length && out.push(q.shift()))
+  return out
+}
+
 function TravelGallery({ title, items }) {
-  const withPhotos = items.filter((i) => i.photo)
+  const withPhotos = interleaveByPlace(items.filter((i) => i.photo))
   if (!withPhotos.length) return null
   return (
-    <Reveal className="mt-16">
+    <Reveal className="mt-12">
       <h3 className="eyebrow mb-5">{title}</h3>
       <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {withPhotos.map((i) => (
@@ -53,12 +63,16 @@ export default function BeyondCode() {
         ))}
       </Reveal>
 
-      <div className="mt-16 grid gap-12 lg:grid-cols-[1.6fr_1fr]">
+      <Reveal className="mt-12 rounded-2xl border border-line bg-ink-2 px-6 py-8 sm:px-10">
+        <p className="mx-auto max-w-3xl text-center font-display text-2xl leading-snug italic text-paper/90 sm:text-3xl">“{b.personal}”</p>
+      </Reveal>
+
+      <div className="mt-12">
         <Reveal>
           <h3 className="eyebrow mb-5">{b.leadershipTitle}</h3>
-          <ul className="divide-y divide-line border-y border-line">
+          <ul className="grid border-t border-line md:grid-cols-2 md:gap-x-10">
             {b.leadership.map((l) => (
-              <li key={l.role + l.org} className="py-5">
+              <li key={l.role + l.org} className="border-b border-line py-5">
                 <div className="flex flex-wrap items-baseline justify-between gap-x-4">
                   <p className="font-medium">
                     {l.role},{' '}
@@ -74,9 +88,6 @@ export default function BeyondCode() {
               </li>
             ))}
           </ul>
-        </Reveal>
-        <Reveal className="self-start rounded-2xl border border-line bg-ink-2 p-6 sm:p-8">
-          <p className="font-display text-2xl leading-snug italic text-paper/90">“{b.personal}”</p>
         </Reveal>
       </div>
 

@@ -43,7 +43,7 @@ export default function Education() {
         </div>
       </Reveal>
 
-      <Reveal className="mt-16">
+      <Reveal className="mt-12">
         <h3 id="certifications" className="font-display text-3xl sm:text-4xl mb-6">{t.certificationsTitle}</h3>
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {t.certifications.map((c) => (

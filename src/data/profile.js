@@ -56,6 +56,10 @@ const en = {
       { label: 'See my work', href: '#projects' },
       { label: 'Get in touch', href: '#contact' },
     ],
+    // Resume button renders only once this is set. Must be a phone-free PDF,
+    // e.g. drop it at public/resume/Karthikeyan-Umesh-Resume.pdf and set '/resume/Karthikeyan-Umesh-Resume.pdf'.
+    resume: null,
+    resumeLabel: 'Resume (PDF)',
   },
 
   about: {
@@ -65,6 +69,14 @@ const en = {
       "My background spans data science and software development, with strong Python and Java skills. I'm especially interested in helping organizations build cost-effective, resilient cloud architectures. Right now I'm building hands-on AWS projects with EC2, S3, RDS, IAM and serverless.",
       'I enjoy turning complex problems into practical solutions, combining analytical thinking with creativity and a collaborative mindset. From developing software projects to exploring AI-driven automation, I value clear communication, continuous learning, and building technology that solves real-world problems. Outside of engineering, my passion for filmmaking has taught me to think from different perspectives, tell compelling stories, and bring ideas to life.',
     ],
+    photo: {
+      src: I + 'grad-800.webp',
+      srcSet: `${I}grad-480.webp 480w, ${I}grad-800.webp 800w`,
+      width: 800,
+      height: 1000,
+      alt: 'Karthikeyan Umesh in graduation robes at Concordia convocation, holding his diploma folder',
+      caption: 'Concordia convocation, 2026',
+    },
     languagesTitle: 'Languages',
     languages: [
       { name: 'English', level: 'Native or bilingual' },
@@ -389,19 +401,22 @@ const en = {
       org: 'WCASET 2022 · Padre Conceição College of Engineering with IFERP',
       date: 'Dec 2022',
       detail: 'For "Product Price Rate Detection Using Regression Models and Shopping Assistant", Goa, India.',
-      image: { src: A + 'best-paper-certificate.jpg', alt: 'Best Paper certificate from the 43rd World Conference on Applied Science, Engineering & Technology, awarded to Karthikeyan Umesh' },
+      // Shown as a small thumbnail + link so award cards stay the same shape.
+      image: { src: A + 'best-paper-certificate.jpg', alt: 'Best Paper certificate from the 43rd World Conference on Applied Science, Engineering & Technology, awarded to Karthikeyan Umesh', label: 'View certificate' },
     },
     {
       title: 'Best Software Project Pitch Award',
       org: 'Concordia University · SOEN 6841',
       date: '2024',
       detail: 'For the AI-Based Academic Advisor. Apple Keynote-style presentation that received a standing ovation.',
+      image: null, // pitch photo / screengrab pending
     },
     {
-      title: '2nd place, national-level short-film competition',
-      org: 'IIM',
+      title: '2nd place, IIM National Level Short Film Festival',
+      org: 'Short film Delusions of Grandeur · Fully Filmy',
       date: '2020',
-      detail: 'Short film Delusions of Grandeur (Fully Filmy). The work was viewed by Anupama Chopra.',
+      detail: 'The work was viewed by Anupama Chopra.',
+      link: { label: 'IMDb profile', url: 'https://www.imdb.com/name/nm18409484/' },
     },
   ],
 
@@ -411,8 +426,8 @@ const en = {
     stories: [
       {
         title: 'Filmmaking',
-        body: "I love making and directing short films. I've worked as Assistant Director on two short films, one of which is listed on IMDb, and my short film Delusions of Grandeur (Fully Filmy) placed 2nd in a national-level IIM competition in 2020. From Sep 2025 to May 2026 I was Event Coordinator for the Concordia Filmmaking Club. Filmmaking has shaped how I approach storytelling, creative problem-solving, teamwork and coordination.",
-        link: null, // IMDb link pending
+        body: "I love making and directing short films. I've worked as Assistant Director on two short films, one of which is listed on IMDb, and my short film Delusions of Grandeur (Fully Filmy) placed 2nd at the IIM National Level Short Film Festival in 2020. From Sep 2025 to May 2026 I was Event Coordinator for the Concordia Filmmaking Club. Filmmaking has shaped how I approach storytelling, creative problem-solving, teamwork and coordination.",
+        link: { label: 'IMDb profile', url: 'https://www.imdb.com/name/nm18409484/' },
       },
       {
         title: 'Learning French',
@@ -454,6 +469,7 @@ const en = {
     personal: 'Diligent note-taker, hard worker and avid French learner. I enjoy travel, and organizing the schedules, transit and logistics that come with it.',
     travelTitle: 'Travel',
     // Cards without a photo are hidden; the whole gallery hides when none have photos.
+    // Order here doesn't matter much: the gallery interleaves places (e.g. Edmonton, Toronto, Edmonton…).
     travel: [
       { place: 'Montréal', when: 'Oct 2026', caption: 'Heading out from Montréal Metropolitan Airport', photo: { src: I + 'travel-met-airport.webp', alt: 'Karthik outside Montréal Metropolitan Airport (MET), next to the terminal sign', width: 640, height: 853 } },
       { place: 'Edmonton', when: 'Oct 2026', caption: 'West Edmonton Mall', photo: { src: I + 'travel-edmonton-mall.webp', alt: 'Karthik under the glass roof of West Edmonton Mall, with pink swan boats behind him', width: 640, height: 1138 } },

@@ -38,8 +38,9 @@ ACCURACY RULES (from the consolidated handoff, 2026-10-12)
 - **Current role / status:** M.Eng. Software Engineering graduate, Concordia (May 2026). Open to work.
 - **Professional identity:** Software Engineering graduate with interests and experience spanning software development, cloud computing, AI-driven automation, data science and technical project leadership.
 - **Open to:** Software engineering, cloud, AI automation and data-related engineering roles. New-grad, contract and part-time roles.
-- **Photo (hero):** public/images/hero-480.webp · public/images/hero-720.webp · public/images/hero-1000.webp <!-- from portfolio-assets/Hero Image.jpeg (Place des Arts, Montréal); WebP, metadata stripped. Replaces Karthik_Grad.jpg -->
-- **Resume PDF (EN):** [path to a phone-free resume] <!-- Resume_Karthik_General.pdf contains the phone number: do not link it -->
+- **Photo (hero):** public/images/hero-480.webp · public/images/hero-720.webp · public/images/hero-1000.webp <!-- from portfolio-assets/Hero Image.jpeg (Place des Arts, Montréal); WebP, metadata stripped -->
+- **Photo (About):** public/images/grad-480.webp · public/images/grad-800.webp — caption "Concordia convocation, 2026" <!-- from portfolio-assets/Karthik_Grad.jpg, cropped, metadata stripped -->
+- **Resume PDF (EN):** [PLACEHOLDER: public/resume/Karthikeyan-Umesh-Resume.pdf, phone-free] <!-- Set hero.resume in profile.js once added; button stays hidden until then. Resume_Karthik_General.pdf contains the phone number: do not link it -->
 - **Resume PDF (FR):** deferred
 
 <!-- Phone number stays off the public site. Email + contact form only. -->
@@ -373,7 +374,8 @@ I enjoy turning complex problems into practical solutions, combining analytical 
 - **Best Paper Award — WCASET 2022.** For "Product Price Rate Detection Using Regression Models and Shopping Assistant" at the 43rd World Conference on Applied Science, Engineering & Technology, organized by Padre Conceição College of Engineering in association with the Institute For Engineering, Research and Publication (IFERP), Dec 29–30, 2022, Goa, India.
   - **Image:** portfolio-assets/Certificate_best Paper.jpg
 - **Best Software Project Pitch Award — Concordia University, 2024.** For the AI-Based Academic Advisor project (SOEN 6841); delivered an Apple Keynote-style presentation that received a standing ovation.
-- **2nd place, national-level short-film competition — [IIM competition: pending], 2020.** Short film *Delusions of Grandeur* (Fully Filmy); the work was viewed by Anupama Chopra. <!-- Do not invent the competition name, award attribution or IMDb link -->
+- **2nd place, IIM National Level Short Film Festival, 2020.** Short film *Delusions of Grandeur* (Fully Filmy); the work was viewed by Anupama Chopra. IMDb: https://www.imdb.com/name/nm18409484/
+- **Best Software Project Pitch Award** image: [PLACEHOLDER: presentation photo or screengrab] <!-- card shows a thumbnail + link like the Best Paper one once added -->
 
 ---
 
@@ -385,10 +387,10 @@ I enjoy turning complex problems into practical solutions, combining analytical 
 
 ### Filmmaking and creative leadership
 
-I love making and directing short films. I've worked as Assistant Director on two short films, one of which is listed on IMDb, and my short film *Delusions of Grandeur* (Fully Filmy) placed 2nd in a national-level IIM competition in 2020. From Sep 2025 to May 2026 I was Event Coordinator for the Concordia Filmmaking Club. Filmmaking has shaped how I approach storytelling, creative problem-solving, teamwork and coordination.
+I love making and directing short films. I've worked as Assistant Director on two short films, one of which is listed on IMDb, and my short film *Delusions of Grandeur* (Fully Filmy) placed 2nd at the IIM National Level Short Film Festival in 2020. From Sep 2025 to May 2026 I was Event Coordinator for the Concordia Filmmaking Club. Filmmaking has shaped how I approach storytelling, creative problem-solving, teamwork and coordination.
 
 - **Film titles / AD credits:** [pending]
-- **IMDb link:** [pending]
+- **IMDb link:** https://www.imdb.com/name/nm18409484/ (profile)
 
 ### Learning French
 

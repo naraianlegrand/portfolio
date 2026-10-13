@@ -39,7 +39,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section id="top" ref={root} aria-label="Introduction" className="relative pt-28 pb-16 sm:pt-36 sm:pb-24">
+    <section id="top" ref={root} aria-label="Introduction" className="relative pt-28 pb-8 sm:pt-36 sm:pb-12">
       <div className="container-x grid items-end gap-10 md:grid-cols-[1.4fr_1fr]">
         <div>
           <p data-hero-fade className="eyebrow mb-6 flex items-center gap-2">
@@ -69,6 +69,11 @@ export default function Hero() {
                 <span aria-hidden="true" className="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
               </a>
             ))}
+            {h.resume && (
+              <a href={h.resume} target="_blank" rel="noreferrer" className="rounded-full px-6 py-3 text-sm font-medium text-muted transition-colors hover:text-paper link-u">
+                {h.resumeLabel}
+              </a>
+            )}
           </div>
         </div>
 

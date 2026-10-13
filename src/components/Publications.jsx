@@ -33,16 +33,37 @@ export default function Publications() {
         ))}
       </Reveal>
 
-      <h3 className="eyebrow mt-16 mb-6">Awards</h3>
-      <Reveal stagger className="grid items-start gap-6 md:grid-cols-3">
+      <h3 className="eyebrow mt-12 mb-6">Awards</h3>
+      {/* Equal-height cards; proof (certificate image, link) sits in a matching footer row. */}
+      <Reveal stagger className="grid gap-6 md:grid-cols-3">
         {t.awards.map((a) => (
           <article key={a.title} className="flex flex-col rounded-2xl border border-line bg-ink-2 p-6">
             <p className="font-mono text-xs uppercase tracking-wider text-ember">{a.date}</p>
             <h4 className="mt-2 font-display text-2xl leading-tight">{a.title}</h4>
             <p className="mt-1 text-sm text-paper/80">{a.org}</p>
             <p className="mt-3 text-sm text-muted leading-relaxed">{a.detail}</p>
-            {a.image && (
-              <img src={a.image.src} alt={a.image.alt} width="1200" height="848" loading="lazy" className="mt-5 rounded-lg border border-line" />
+            {(a.image || a.link) && (
+              <div className="mt-auto flex items-center gap-4 pt-5">
+                {a.image && (
+                  <a href={a.image.src} target="_blank" rel="noreferrer" className="group/img flex items-center gap-3 text-sm">
+                    <img
+                      src={a.image.src}
+                      alt={a.image.alt}
+                      width="96"
+                      height="68"
+                      loading="lazy"
+                      className="h-[68px] w-24 rounded-md border border-line object-cover transition-transform group-hover/img:scale-105"
+                    />
+                    <span className="link-u">{a.image.label} <span aria-hidden="true">↗</span></span>
+                  </a>
+                )}
+                {a.link && (
+                  <a href={a.link.url} target="_blank" rel="noreferrer" className="link-u text-sm">
+                    {a.link.label} <span aria-hidden="true">↗</span>
+                    <span className="sr-only"> (opens in a new tab)</span>
+                  </a>
+                )}
+              </div>
             )}
           </article>
         ))}
