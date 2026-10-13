@@ -6,6 +6,7 @@ Personal portfolio site. `CONTENT.md` is the source of truth for all copy; `src/
 
 - Vite + React 19, Tailwind CSS v4 (`@tailwindcss/vite`), GSAP + SplitText (hero only), Lenis, self-hosted fonts via `@fontsource`
 - `npm run dev` · `npm run build` (client build → SSR build → `scripts/prerender.js` injects HTML into `dist/index.html`) · `npm run preview`
+- `python scripts/process-assets.py ../portfolio-assets .` converts source images from `../portfolio-assets/` to WebP in `public/` (Pillow)
 - Deploy target: Vercel. Domain (later): karthikeyanumesh.com
 - Lighthouse (2026-10-12, local, compressed): mobile 92 / 100 / 100 / 100, desktop 100 / 100 / 100 / 100
 
