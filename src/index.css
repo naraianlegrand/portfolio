@@ -1,0 +1,132 @@
+@import 'tailwindcss';
+
+/* Design tokens: dark charcoal, warm paper text, ember accent.
+   Chronicle gets its own parchment / emerald / gold palette. */
+@theme {
+  --color-ink: #0f0f11;
+  --color-ink-2: #17171a;
+  --color-ink-3: #212126;
+  --color-line: #2c2c33;
+  --color-paper: #ede8df;
+  --color-muted: #a29d94;
+  --color-ember: #f0845a;
+  --color-ember-soft: #f0845a1f;
+
+  --color-parchment: #f3e9d2;
+  --color-parchment-2: #e8d9b5;
+  --color-quill: #2b2418;
+  --color-emerald: #1f6b4f;
+  --color-gold: #b8913a;
+
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    background: var(--color-ink);
+    color: var(--color-paper);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    background: var(--color-ink);
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: var(--color-ember);
+    color: var(--color-ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-ember);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+@layer components {
+  .container-x {
+    width: 100%;
+    max-width: 72rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+  @media (min-width: 640px) {
+    .container-x {
+      padding-inline: 1.5rem;
+    }
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-ember);
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+    font-size: 0.8rem;
+    color: var(--color-paper);
+    background: var(--color-ink-2);
+  }
+  .link-u {
+    text-decoration: underline;
+    text-decoration-color: color-mix(in oklab, var(--color-ember) 60%, transparent);
+    text-underline-offset: 4px;
+    transition: color 0.2s, text-decoration-color 0.2s;
+  }
+  .link-u:hover {
+    color: var(--color-ember);
+    text-decoration-color: var(--color-ember);
+  }
+}
+
+/* Hero text waits (briefly) for GSAP; the photo never hides because it is the LCP element. */
+.hero-intro #top h1,
+.hero-intro #top [data-hero-fade] {
+  visibility: hidden;
+}
+
+/* Skip layout/paint of off-screen sections until they approach the viewport. */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 1200px;
+}
+
+/* Scroll reveal: classes are added by Reveal.jsx only when motion is allowed. */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Visible before JS; Reveal hides then animates only when motion is allowed. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
