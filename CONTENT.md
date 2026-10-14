@@ -40,7 +40,7 @@ ACCURACY RULES (from the consolidated handoff, 2026-10-12)
 - **Open to:** Software engineering, cloud, AI automation and data-related engineering roles. Full-time and part-time roles, including new-grad and contract positions.
 - **Photo (hero):** public/images/hero-480.webp · public/images/hero-720.webp · public/images/hero-1000.webp <!-- from portfolio-assets/Hero Image.jpeg (Place des Arts, Montréal); WebP, metadata stripped -->
 - **Photo (About):** public/images/grad-480.webp · public/images/grad-800.webp — caption "Concordia convocation, 2026" <!-- from portfolio-assets/Karthik_Grad.jpg, cropped, metadata stripped -->
-- **Resume PDF (EN):** [PLACEHOLDER: public/resume/Karthikeyan-Umesh-Resume.pdf, phone-free] <!-- Set hero.resume in profile.js once added; button stays hidden until then. Resume_Karthik_General.pdf contains the phone number: do not link it -->
+- **Resume PDF (EN):** public/resume/Karthikeyan-Umesh-Resume.pdf <!-- copied from portfolio-assets/General_resume_without mobile_number.pdf (phone-free, checked 2026-10-14). Linked from the hero and the Contact links. Resume_Karthik_General.pdf contains the phone number: never link it -->
 - **Resume PDF (FR):** deferred
 
 <!-- Phone number stays off the public site. Email + contact form only. -->

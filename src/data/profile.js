@@ -4,7 +4,8 @@
 
 const A = '/assets/'
 const I = '/images/' // photos: WebP, resized, all metadata stripped
-const IBM_BADGE = { src: A + 'ibm-logo.webp', alt: 'IBM logo' }
+const RESUME = '/resume/Karthikeyan-Umesh-Resume.pdf' // from portfolio-assets/General_resume_without mobile_number.pdf
+const IBM_BADGE ={ src: A + 'ibm-logo.webp', alt: 'IBM logo' }
 const FILM_POSTER_ALT =
   'Poster for the short film Delusions of Grandeur, directed by Karthikeyan Umesh, with laurels for Official Selection at CARV Karnataka 2020, 2nd Best Short Film at IIM Shortcuts 2019 and 3rd Best Short Film at Estrade St. Claret 2020'
 
@@ -59,9 +60,8 @@ const en = {
       { label: 'See my work', href: '#projects' },
       { label: 'Get in touch', href: '#contact' },
     ],
-    // Resume button renders only once this is set. Must be a phone-free PDF,
-    // e.g. drop it at public/resume/Karthikeyan-Umesh-Resume.pdf and set '/resume/Karthikeyan-Umesh-Resume.pdf'.
-    resume: null,
+    // Resume button renders only when this is set. Must be a phone-free PDF (checked 2026-10-14: text, metadata and links).
+    resume: RESUME,
     resumeLabel: 'Resume (PDF)',
   },
 
@@ -519,6 +519,7 @@ const en = {
     links: [
       { label: 'LinkedIn', url: 'https://linkedin.com/in/karthikeyanumesh' },
       { label: 'GitHub', url: 'https://github.com/naraianlegrand' },
+      { label: 'Resume (PDF)', url: RESUME },
     ],
     formspreeId: null, // Form renders only once this is set.
   },
