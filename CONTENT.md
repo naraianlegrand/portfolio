@@ -158,7 +158,7 @@ I enjoy turning complex problems into practical solutions, combining analytical 
 - **Tech:** HTML5, CSS3, JavaScript (ES6+), Amazon S3 static website hosting, GitHub
 - **Live URL:** omitted <!-- S3 site returned 404 on 2026-10-12; re-add only once it works -->
 - **Repo URL:** https://github.com/naraianlegrand/mk-cloud-journey
-- **Screenshot(s):** [paths]
+- **Screenshot(s):** public/assets/cloudtech-repo.webp <!-- from portfolio-assets/Cloud_Tech_Repo_SS.png (script.js on GitHub), cropped -->
 
 ### PennyWise — iPhone Price Prediction / Shopping Assistant
 

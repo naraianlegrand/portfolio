@@ -49,6 +49,10 @@ poster = poster.crop((2, 0, 729, 908))
 save(poster, images / 'film-poster-727.webp')
 save(poster.resize((480, round(poster.height * 480 / poster.width)), Image.LANCZOS), images / 'film-poster-480.webp')
 
+# Cloud Tech repo screenshot: drop GitHub's cut-off Symbols panel (right of the code border at x=1444), 1400w like the other repo shots.
+cloud = clean(Image.open(src / 'Cloud_Tech_Repo_SS.png')).crop((0, 0, 1452, 832))
+save(cloud.resize((1400, round(cloud.height * 1400 / cloud.width)), Image.LANCZOS), assets / 'cloudtech-repo.webp')
+
 # IBM logo: square white tile like the AWS badge (128px, shown at 64px).
 save(tile(clean(Image.open(src / 'ibm_logo_for_certs.jpg')), 128, 22, square=True), assets / 'ibm-logo.webp', q=90)
 

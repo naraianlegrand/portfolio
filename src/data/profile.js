@@ -204,7 +204,9 @@ const en = {
       tech: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'Amazon S3 static hosting', 'GitHub'],
       repo: { url: 'https://github.com/naraianlegrand/mk-cloud-journey', private: false },
       live: null, // S3 site returned 404 on 2026-10-12
-      images: [],
+      images: [
+        { src: A + 'cloudtech-repo.webp', alt: 'script.js in the mk-cloud-journey repository on GitHub: sticky navbar and hamburger menu code', width: 1400, height: 802 },
+      ],
     },
     {
       id: 'pennywise',
