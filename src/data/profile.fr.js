@@ -382,7 +382,7 @@ export const frOverrides = {
     leadershipTitle: 'Leadership et engagement',
     leadership: [
       {
-        role: 'Membre du conseil, représentant des étudiants des cycles supérieurs',
+        role: 'Membre du conseil',
         dates: 'sept. 2025 – avr. 2026',
         detail: "J'ai représenté les intérêts des étudiants des cycles supérieurs dans les décisions universitaires sur la vie étudiante et voté sur des initiatives étudiantes et le financement de programmes menés par des étudiants.",
       },

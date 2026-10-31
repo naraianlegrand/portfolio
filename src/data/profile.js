@@ -517,7 +517,7 @@ const en = {
     leadershipTitle: 'Leadership & community',
     leadership: [
       {
-        role: 'Board Member, Graduate Student Representative',
+        role: 'Board Member',
         org: 'Concordia Council on Student Life (CCSL)',
         dates: 'Sep 2025 – Apr 2026',
         detail: 'Represented graduate student interests in university-level student-life decisions and voted on student-focused initiatives and funding for student-led programs.',
