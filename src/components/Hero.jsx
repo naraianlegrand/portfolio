@@ -39,7 +39,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section id="top" ref={root} aria-label="Introduction" className="relative pt-28 pb-8 sm:pt-36 sm:pb-12">
+    <section id="top" ref={root} aria-label={t.ui.heroLabel} className="relative pt-28 pb-8 sm:pt-36 sm:pb-12">
       <div className="container-x grid items-end gap-10 md:grid-cols-[1.4fr_1fr]">
         <div>
           <p data-hero-fade className="eyebrow mb-6 flex items-center gap-2">

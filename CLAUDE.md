@@ -12,8 +12,8 @@ Personal portfolio site. `CONTENT.md` is the source of truth for all copy; `src/
 
 ## Structure
 
-- `src/data/profile.js` — all site content, keyed by language (`en` now; `fr` deferred)
-- `src/i18n.jsx` — language context; the EN/FR toggle only renders when a second language has content
+- `src/data/profile.js` — all site content (`en`); `src/data/profile.fr.js` holds the French strings, overlaid onto `en` by index/key. When you change English copy, update the French entry at the same position.
+- `src/i18n.jsx` — language context and EN/FR toggle. The page is prerendered in English; a saved FR choice is applied after hydration.
 - `src/components/` — one component per section, plus `Reveal.jsx` (IntersectionObserver + CSS scroll reveal) and `SmoothScroll.jsx` (Lenis, lazy-loaded, off on touch devices)
 - `src/motion.js` — `loadGsap()` lazy-loads GSAP so it stays out of the critical bundle
 - `src/entry-server.jsx` + `scripts/prerender.js` — build-time prerender; `main.jsx` hydrates when HTML is present
@@ -31,7 +31,7 @@ Personal portfolio site. `CONTENT.md` is the source of truth for all copy; `src/
 
 1. Never include Sky UK / Firstsource customer-service employment anywhere.
 2. Never invent metrics, results, technologies, awards, links, certifications, duties or deployment status.
-3. Chronicle is a concept **In Development**. Never show planned features as built, and never make fake screenshots or UI mockups that look like a working app.
+3. Sloucher (featured, Released v0.1.0): use the measured numbers exactly as in `portfolio-assets/portfolio_Sloucher_Project/SLOUCHER_PORTFOLIO_BRIEF.md`. It runs on AMD Ryzen 7040/8040 + Windows 11 only today (other ports are planned), is NPU-only (never "CPU or NPU"), and is not affiliated with or endorsed by AMD. Chronicle was removed from the site (2026-10-31).
 4. Serverless AI Resume Tailor API is tested locally. AWS Lambda is a planned deployment path, not live. It calls Gemini through HTTPX, not the Google GenAI SDK. The match score of 48 is an example output, not an accuracy claim.
 5. Cloud Tech's "future enhancements" (Lambda, API Gateway, SES, CodePipeline, CodeBuild, DynamoDB) are not implemented. Its S3 live link is broken: do not link it until it works.
 6. Cloud Tech (learning website) and AWS 3-Tier Architecture with Terraform (In Progress) are separate projects.
@@ -47,9 +47,10 @@ Personal portfolio site. `CONTENT.md` is the source of truth for all copy; `src/
 ## Content & UI rules
 
 - Missing optional assets (screenshots, badges, travel photos, film links) are hidden, never shown as empty boxes or broken links. Model them as `null` in `profile.js`.
-- Private repos (TubeLytics, Chronicle) render as "Private repo" text, not a link that 404s.
+- Private repos (e.g. TubeLytics) render as "Private repo" text, not a link that 404s.
 - The contact form only renders once a Formspree ID is set. Until then, show the email link. Never show a fake "Message sent" state.
 - Label every project's status and group (work in progress, completed, academic proposal, learning project).
 - Respect `prefers-reduced-motion`: disable Lenis and GSAP animations when it is set.
 - Keep it accessible: semantic landmarks, alt text, visible focus states, AA contrast, keyboard-usable nav.
 - Site copy is first person ("I"), matching the approved About section.
+- French copy: Québec usage (courriel, infonuagique). Never translate a job title into "ingénieur"; keep publication, course and festival titles in English.

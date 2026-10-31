@@ -1,6 +1,8 @@
 // Site content. Mirrors CONTENT.md, which is the source of truth.
 // Accuracy rules live in CLAUDE.md. Missing optional assets are `null` and get hidden.
-// French (`fr`) is deferred: add a full object with the same shape to enable the language toggle.
+// French copy lives in profile.fr.js and is overlaid onto `en` (see localize() at the bottom).
+
+import { frOverrides } from './profile.fr.js'
 
 const A = '/assets/'
 const I = '/images/' // photos: WebP, resized, all metadata stripped
@@ -18,6 +20,7 @@ const en = {
     privateRepo: 'Private repo',
     repo: 'Repository',
     live: 'Live site',
+    visitLive: 'Visit the live site',
     status: 'Status',
     role: 'Role',
     tech: 'Tech',
@@ -28,6 +31,24 @@ const en = {
     credentialId: 'Credential ID',
     backToTop: 'Back to top',
     readStory: 'Read the story',
+    showAllProjects: 'Show all projects',
+    showAllExperience: 'Show all experience',
+    showLess: 'Show less',
+    newTab: '(opens in a new tab)',
+    openFull: 'open full image in a new tab',
+    featured: 'Featured',
+    awards: 'Awards',
+    heroLabel: 'Introduction',
+    navLabel: 'Primary',
+    form: {
+      name: 'Name',
+      email: 'Email',
+      message: 'Message',
+      send: 'Send message',
+      sending: 'Sending…',
+      sent: 'Thanks, your message was sent.',
+      error: 'Something went wrong. Please email me directly instead.',
+    },
     emailMe: 'Email me',
   },
 
@@ -95,27 +116,37 @@ const en = {
   projectsTitle: 'Projects',
   projectsIntro: 'Featured work first, then academic, learning and in-progress projects. Every card says where the project actually stands.',
 
-  // Chronicle first, then the Resume Tailor API.
+  // Sloucher first, then the Resume Tailor API.
+  // Sloucher facts and numbers come from portfolio-assets/portfolio_Sloucher_Project/SLOUCHER_PORTFOLIO_BRIEF.md (measured).
   featured: [
     {
-      id: 'chronicle',
-      variant: 'chronicle',
-      name: 'Chronicle',
-      status: 'In Development',
-      group: 'Work in progress',
-      tagline: 'Cross-platform fantasy identity and social discovery app',
+      id: 'sloucher',
+      variant: 'default',
+      name: 'Sloucher',
+      status: 'Released · v0.1.0, October 2026',
+      group: 'Completed work',
+      tagline:
+        "An always-on posture coach that runs its AI on the laptop's NPU, not the CPU: about 1% CPU, and the video never leaves the laptop.",
+      // Elevator pitch; the measured detail lives in `highlights`.
       description:
-        "Users enter fantasy-inspired dating and personality traits to create a fantasy version of themselves. Chronicle turns that information into visually rich personal dashboards, inspired by business analytics dashboards but focused on a person's fantasy identity. Users can become friends and explore each other's dashboards.",
-      distinction:
-        'Not another Facebook or Tinder: a playful, immersive world where people discover each other through beautifully presented fantasy identities.',
-      plannedTitle: 'Planned experience',
-      planned: ['Character creation', 'Personalized fantasy dashboards', 'Friends and social discovery'],
-      progress: 'Concept stage. Repository set up; build not started yet.',
+        'It watches your posture through the webcam: slouch for most of 30 seconds and the screen edges glow; once an hour it sends you for a walk. I took it from an idea to a released, open-source Windows app on my own: model quantization, NPU debugging, the app, the installer and a bilingual website.',
+      note: 'Runs on Windows 11 laptops with an AMD Ryzen 7040 or 8040 today; Intel, Snapdragon and Mac ports are planned. Free and open source (AGPL-3.0). Privacy by design: each camera frame becomes 17 body points on the NPU and is discarded; nothing is uploaded or stored.',
+      highlights: [
+        { lead: '96.5% on the NPU, 0.8% CPU', text: "INT8 YOLOv8n-pose at 12-17 ms per frame; fixing ONNX Runtime's busy-waiting thread pool cut whole-app CPU from 44%." },
+        { lead: 'No false alarms', text: 'On 9 recorded desk clips, all 3 bad-posture clips alert at 30 s and none of the 6 good ones do.' },
+        { lead: 'Shipped like a product', text: '39 MB installer, no admin rights, self-test, checksummed GitHub Release, tests on every push.' },
+        { lead: 'Private by design', text: "No account, no cloud, no telemetry; built with Québec's Law 25 in mind." },
+      ],
       role: 'Solo',
-      tech: ['Flutter (planned: web, iOS, Android)'],
-      repo: { url: 'https://github.com/naraianlegrand/chronicle-app', private: true },
-      live: null,
-      images: [],
+      tech: ['Python 3.12', 'ONNX Runtime', 'AMD Ryzen AI 1.6.1 (Vitis AI EP)', 'YOLOv8n-pose (INT8)', 'AMD Quark quantization', 'NumPy', 'OpenCV', 'Tkinter', 'pystray', 'PyInstaller', 'Inno Setup', 'pytest', 'GitHub Actions', 'HTML/CSS/JS', 'Cloudflare Pages'],
+      repo: { url: 'https://github.com/naraianlegrand/sloucher_ai', private: false },
+      live: 'https://sloucher.karthikeyanumesh.com',
+      story: 'https://sloucher.karthikeyanumesh.com/story/',
+      images: [
+        { src: A + 'sloucher-hero.webp', alt: 'Sloucher website: "Your laptop has an AI chip that sits idle. Let it fix your posture."', width: 1400, height: 800 },
+        { src: A + 'sloucher-cpu.webp', alt: 'Chart of whole-app CPU use: ONNX Runtime defaults 44%, thread spinning off 3%, Sloucher at 2 fps 0.8%', width: 1200, height: 520 },
+        { src: A + 'sloucher-walk.webp', alt: 'Scroll animation on the website: a person sits back down at a laptop showing "Not done yet: 18 s left"', width: 1400, height: 800 },
+      ],
     },
     {
       id: 'resume-tailor',
@@ -143,6 +174,7 @@ const en = {
     },
   ],
 
+  // `more: true` items (here and in `experience`) start collapsed behind a "Show all" button.
   projects: [
     {
       id: 'tubelytics',
@@ -193,6 +225,7 @@ const en = {
     },
     {
       id: 'cloud-tech',
+      more: true,
       name: 'Cloud Tech',
       subtitle: 'AWS Learning Website',
       status: 'Completed',
@@ -210,6 +243,7 @@ const en = {
     },
     {
       id: 'pennywise',
+      more: true,
       name: 'PennyWise',
       subtitle: 'iPhone Price Prediction / Shopping Assistant',
       status: 'Research-backed · repository being recovered',
@@ -226,6 +260,7 @@ const en = {
     },
     {
       id: 'aws-3-tier',
+      more: true,
       name: 'AWS 3-Tier Architecture',
       subtitle: 'with Terraform',
       status: 'In Progress',
@@ -244,17 +279,18 @@ const en = {
     {
       role: 'AI Automation & Data Analyst',
       org: 'Boston Soft Design',
-      dates: 'Aug 2026 – Present',
+      dates: 'Aug 2026 – Oct 2026',
       meta: 'Part-time, unpaid',
       summary:
-        'Contribute to business operations and procurement while supporting client acquisition for CRM software and AI integration services. Conduct outreach to prospective clients, help identify business opportunities, and contribute to data analysis and AI-driven automation initiatives.',
+        'Contributed to business operations and procurement while supporting client acquisition for CRM software and AI integration services. Conducted outreach to prospective clients, helped identify business opportunities, and contributed to data analysis and AI-driven automation initiatives.',
       highlights: ['Contacted hundreds of prospective clients through outreach'],
     },
     {
       role: 'Exam Invigilator',
       org: 'Concordia University',
-      dates: 'Apr 2026 – Present',
+      dates: 'Apr 2026 – Sep 2026',
       meta: 'Contract, part-time · Montréal, on-site',
+      more: true,
       summary:
         'Monitored examination environments to support academic integrity, assisted students with exam procedures, and coordinated with administrative staff to keep exam operations smooth and professional.',
     },
@@ -275,7 +311,8 @@ const en = {
       role: 'Quality Assurance & Hardware Tester (Freelance)',
       org: 'NetEase Games Montréal',
       dates: '2025',
-      meta: 'Montréal',
+      meta: 'Montréal · One-day engagement, under NDA',
+      more: true,
       highlights: [
         'Executed manual testing and QA protocols to identify defects and verify software performance',
         'Worked with cross-functional development teams to troubleshoot technical issues and improve system reliability',
@@ -309,6 +346,7 @@ const en = {
       org: 'Knowbility Media',
       dates: 'Jun 2020 – Oct 2020',
       meta: 'New Delhi, India · Remote',
+      more: true,
       summary:
         'Website and graphic design for clients, including a lead-generating website, marketing assets and social media creatives, working directly with clients on requirements.',
     },
@@ -318,10 +356,10 @@ const en = {
   skills: [
     { group: 'Languages', items: ['Python', 'Java', 'SQL', 'JavaScript', 'HTML/CSS'] },
     { group: 'Backend & APIs', items: ['FastAPI', 'Pydantic', 'HTTPX', 'asyncio', 'Flask', 'Play Framework', 'Akka', 'WebSockets', 'REST APIs', 'PostgreSQL'] },
-    { group: 'Cloud & DevOps', items: ['AWS (EC2, S3, Lambda)', 'S3 static hosting', 'Docker', 'Git', 'CI/CD', 'Linux/Unix'] },
-    { group: 'AI & Data', items: ['Gemini API', 'Regression models', 'Data analysis'] },
-    { group: 'Frontend', items: ['React', 'HTML5', 'CSS3'] },
-    { group: 'Quality', items: ['Manual & automated testing', 'Code reviews', 'Sonar', 'Javadoc'] },
+    { group: 'Cloud & DevOps', items: ['AWS (EC2, S3, Lambda)', 'S3 static hosting', 'Cloudflare Pages', 'Docker', 'Git', 'GitHub Actions', 'CI/CD', 'Linux/Unix'] },
+    { group: 'AI & Data', items: ['ONNX Runtime', 'AMD Ryzen AI (NPU)', 'INT8 quantization (AMD Quark)', 'YOLOv8n-pose', 'OpenCV', 'NumPy', 'Gemini API', 'Regression models', 'Data analysis'] },
+    { group: 'Frontend & desktop', items: ['React', 'HTML5', 'CSS3', 'Tkinter', 'pystray', 'PyInstaller', 'Inno Setup'] },
+    { group: 'Quality', items: ['Manual & automated testing', 'pytest', 'Code reviews', 'Sonar', 'Javadoc'] },
     { group: 'Practices', items: ['Object-oriented design', 'Agile', 'Project management', 'Requirements analysis', 'Risk management'] },
     { group: 'Currently learning', items: ['Terraform', 'AWS Solutions Architect – Associate'] },
   ],
@@ -532,5 +570,18 @@ const en = {
   },
 }
 
-export const profile = { en, fr: null }
+// Overlays translated strings onto `en`: objects merge by key, arrays by index,
+// and anything a translation leaves out (URLs, images, tech names) stays as in English.
+function localize(base, over) {
+  if (over === undefined) return base
+  if (Array.isArray(base) && Array.isArray(over)) return base.map((b, i) => localize(b, over[i]))
+  if (base && typeof base === 'object' && over && typeof over === 'object' && !Array.isArray(over)) {
+    const out = { ...base }
+    for (const k of Object.keys(over)) out[k] = localize(base[k], over[k])
+    return out
+  }
+  return over
+}
+
+export const profile = { en, fr: localize(en, frOverrides) }
 export const languages = Object.keys(profile).filter((k) => profile[k])

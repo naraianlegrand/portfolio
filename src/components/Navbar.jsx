@@ -51,7 +51,7 @@ export default function Navbar() {
         scrolled || open ? 'bg-ink/85 backdrop-blur-md border-line' : 'border-transparent'
       }`}
     >
-      <nav aria-label="Primary" className="container-x flex h-16 items-center justify-between">
+      <nav aria-label={t.ui.navLabel} className="container-x flex h-16 items-center justify-between">
         <a href="#top" className="font-display text-2xl tracking-tight">
           Karthik<span className="text-ember">.</span>
         </a>

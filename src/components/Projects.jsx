@@ -1,118 +1,46 @@
+import { useState } from 'react'
 import { useLang } from '../i18n'
 import Section from './Section'
 import Reveal from './Reveal'
+import NewTab from './NewTab'
+import ShowMore from './ShowMore'
 
-function RepoLink({ repo, ui, tone = 'dark' }) {
+function RepoLink({ repo, ui }) {
   if (!repo) return null
   if (repo.private) {
-    return (
-      <span className={`font-mono text-xs ${tone === 'parchment' ? 'text-quill/70' : 'text-muted'}`}>
-        {ui.privateRepo}
-      </span>
-    )
+    return <span className="font-mono text-xs text-muted">{ui.privateRepo}</span>
   }
   return (
     <a href={repo.url} target="_blank" rel="noreferrer" className="link-u text-sm">
       {ui.repo} <span aria-hidden="true">↗</span>
-      <span className="sr-only"> (opens in a new tab)</span>
+      <NewTab />
     </a>
   )
 }
 
-function Chips({ items, tone = 'dark' }) {
+function Chips({ items }) {
   if (!items?.length) return null
   return (
     <ul className="flex flex-wrap gap-2">
       {items.map((x) => (
-        <li
-          key={x}
-          className={
-            tone === 'parchment'
-              ? 'rounded-full border border-gold/50 px-2.5 py-0.5 text-xs text-quill'
-              : 'chip'
-          }
-        >
-          {x}
-        </li>
+        <li key={x} className="chip">{x}</li>
       ))}
     </ul>
   )
 }
 
-function Status({ children, tone = 'dark' }) {
+function Status({ children }) {
   return (
-    <span
-      className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 font-mono text-[0.7rem] uppercase tracking-wider ${
-        tone === 'parchment' ? 'bg-emerald text-parchment' : 'bg-ember-soft text-ember'
-      }`}
-    >
+    <span className="inline-flex items-center gap-1.5 rounded-full bg-ember-soft px-2.5 py-1 font-mono text-[0.7rem] uppercase tracking-wider text-ember">
       <span className="h-1.5 w-1.5 rounded-full bg-current" aria-hidden="true" />
       {children}
     </span>
   )
 }
 
-// Concept presentation, not a UI mockup: Chronicle has no built screens yet.
-function ChronicleCard({ p, ui }) {
-  return (
-    <Reveal
-      as="article"
-      aria-labelledby={`${p.id}-title`}
-      className="relative overflow-hidden rounded-[2rem] border border-gold/40 bg-parchment text-quill p-6 sm:p-12 shadow-[0_30px_80px_-30px_rgba(184,145,58,0.45)]"
-    >
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-60 bg-[radial-gradient(ellipse_at_top_right,rgba(31,107,79,0.18),transparent_55%),radial-gradient(ellipse_at_bottom_left,rgba(184,145,58,0.25),transparent_60%)]"
-      />
-      <div aria-hidden="true" className="pointer-events-none absolute inset-3 sm:inset-5 rounded-[1.5rem] border border-gold/40" />
-      <div className="relative grid gap-10 lg:grid-cols-[1.5fr_1fr]">
-        <div>
-          <div className="mb-5 flex flex-wrap items-center gap-3">
-            <Status tone="parchment">{p.status}</Status>
-            <span className="font-mono text-xs uppercase tracking-wider text-quill/70">Featured · {p.group}</span>
-          </div>
-          <h3 id={`${p.id}-title`} className="font-display text-6xl sm:text-8xl leading-none text-emerald">
-            {p.name}
-          </h3>
-          <p className="mt-3 font-display italic text-2xl text-quill/80">{p.tagline}</p>
-          <p className="mt-6 leading-relaxed">{p.description}</p>
-          <p className="mt-4 border-l-2 border-gold pl-4 italic text-quill/85">{p.distinction}</p>
-        </div>
-        <div className="flex flex-col gap-6 lg:pt-4">
-          <div className="rounded-2xl border border-gold/40 bg-parchment-2/60 p-5">
-            <h4 className="font-mono text-xs uppercase tracking-wider text-emerald mb-3">{p.plannedTitle}</h4>
-            <ol className="space-y-2">
-              {p.planned.map((x, i) => (
-                <li key={x} className="flex gap-3">
-                  <span className="font-display text-gold text-lg leading-6" aria-hidden="true">{['I', 'II', 'III', 'IV'][i]}</span>
-                  <span>{x}</span>
-                </li>
-              ))}
-            </ol>
-          </div>
-          <dl className="space-y-3 text-sm">
-            <div>
-              <dt className="font-mono text-xs uppercase tracking-wider text-quill/60">{ui.status}</dt>
-              <dd>{p.progress}</dd>
-            </div>
-            <div>
-              <dt className="font-mono text-xs uppercase tracking-wider text-quill/60">{ui.role}</dt>
-              <dd>{p.role}</dd>
-            </div>
-            <div>
-              <dt className="font-mono text-xs uppercase tracking-wider text-quill/60 mb-1.5">{ui.tech}</dt>
-              <dd><Chips items={p.tech} tone="parchment" /></dd>
-            </div>
-          </dl>
-          <RepoLink repo={p.repo} ui={ui} tone="parchment" />
-        </div>
-      </div>
-    </Reveal>
-  )
-}
-
 // `thumb` crops to a uniform tile (top-aligned) and links to the full image, for multi-image grids.
 function Figure({ img, className = '', thumb = false }) {
+  const { t } = useLang()
   const image = (
     <img
       src={img.src}
@@ -126,7 +54,7 @@ function Figure({ img, className = '', thumb = false }) {
   return (
     <figure className={`overflow-hidden rounded-xl border border-line bg-ink-3 ${className}`}>
       {thumb ? (
-        <a href={img.src} target="_blank" rel="noreferrer" className="group/fig block" aria-label={`${img.alt} (open full image in a new tab)`}>
+        <a href={img.src} target="_blank" rel="noreferrer" className="group/fig block" aria-label={`${img.alt} (${t.ui.openFull})`}>
           {image}
         </a>
       ) : (
@@ -136,33 +64,94 @@ function Figure({ img, className = '', thumb = false }) {
   )
 }
 
-function FeaturedCard({ p, ui }) {
+// The lead screenshot doubles as a link to the live site, with a slow ember glow so it reads as clickable.
+function LiveFigure({ img, href, label }) {
   return (
-    <Reveal as="article" aria-labelledby={`${p.id}-title`} className="rounded-[2rem] border border-line bg-ink-2 p-6 sm:p-10">
+    <a href={href} target="_blank" rel="noreferrer" className="glow-pulse group/live relative isolate block rounded-xl">
+      <figure className="overflow-hidden rounded-xl border border-ember/60 bg-ink-3">
+        <img
+          src={img.src}
+          alt={img.alt}
+          width={img.width}
+          height={img.height}
+          loading="lazy"
+          className="w-full h-auto transition-transform duration-500 group-hover/live:scale-[1.02]"
+        />
+      </figure>
+      <span className="absolute bottom-3 right-3 rounded-full bg-ink/85 px-3 py-1.5 text-xs font-medium text-paper transition-colors group-hover/live:text-ember">
+        {label} <span aria-hidden="true">↗</span>
+        <NewTab />
+      </span>
+    </a>
+  )
+}
+
+function ExternalLink({ href, children }) {
+  return (
+    <a href={href} target="_blank" rel="noreferrer" className="link-u text-sm">
+      {children} <span aria-hidden="true">↗</span>
+      <NewTab />
+    </a>
+  )
+}
+
+// The first featured project gets the big card; later ones are compact, with role, tech and
+// links under the screenshot so the two columns end at about the same height.
+function FeaturedCard({ p, ui, compact = false }) {
+  const [lead, ...more] = p.images
+  const meta = (
+    <>
+      <p className={`text-sm ${compact ? '' : 'mt-5'}`}><span className="text-muted">{ui.role}: </span>{p.role}</p>
+      <div className={compact ? '' : 'mt-5'}><Chips items={p.tech} /></div>
+      <div className={`flex flex-wrap items-center gap-x-6 gap-y-2 ${compact ? '' : 'mt-6'}`}>
+        {p.live && <ExternalLink href={p.live}>{ui.live}</ExternalLink>}
+        {p.story && <ExternalLink href={p.story}>{ui.readStory}</ExternalLink>}
+        <RepoLink repo={p.repo} ui={ui} />
+      </div>
+    </>
+  )
+  return (
+    <Reveal as="article" aria-labelledby={`${p.id}-title`} className={`rounded-[2rem] border border-line bg-ink-2 ${compact ? 'p-6 sm:p-8' : 'p-6 sm:p-10'}`}>
       <div className="mb-5 flex flex-wrap items-center gap-3">
         <Status>{p.status}</Status>
-        <span className="font-mono text-xs uppercase tracking-wider text-muted">Featured · {p.group}</span>
+        <span className="font-mono text-xs uppercase tracking-wider text-muted">{ui.featured} · {p.group}</span>
       </div>
-      <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr]">
+      <div className={`grid ${compact ? 'gap-8 lg:grid-cols-[1.1fr_1fr]' : 'gap-10 lg:grid-cols-[1fr_1.2fr]'}`}>
         <div>
-          <h3 id={`${p.id}-title`} className="font-display text-4xl sm:text-5xl leading-tight">{p.name}</h3>
+          <h3 id={`${p.id}-title`} className={`font-display leading-tight ${compact ? 'text-3xl sm:text-4xl' : 'text-4xl sm:text-5xl'}`}>{p.name}</h3>
           <p className="mt-3 text-paper/80">{p.tagline}</p>
-          <p className="mt-5 text-muted leading-relaxed">{p.description}</p>
+          <p className={`text-muted leading-relaxed ${compact ? 'mt-4 text-sm' : 'mt-5'}`}>{p.description}</p>
           {p.note && <p className="mt-4 text-sm text-muted border-l-2 border-ember/60 pl-3">{p.note}</p>}
-          <p className="mt-5 text-sm"><span className="text-muted">{ui.role}: </span>{p.role}</p>
-          <div className="mt-5"><Chips items={p.tech} /></div>
-          <div className="mt-6"><RepoLink repo={p.repo} ui={ui} /></div>
+          {!compact && meta}
         </div>
-        {p.images[0] && <Figure img={p.images[0]} className="self-center" />}
+        <div className={`flex flex-col ${compact ? 'gap-5' : 'gap-6'}`}>
+          {lead && (p.live ? <LiveFigure img={lead} href={p.live} label={ui.visitLive} /> : <Figure img={lead} />)}
+          {compact && meta}
+          {more.length > 0 && (
+            <div className="grid grid-cols-2 gap-3">
+              {more.map((img) => <Figure key={img.src} img={img} thumb />)}
+            </div>
+          )}
+          {p.highlights && (
+            <ul className="space-y-3 text-sm">
+              {p.highlights.map((h) => (
+                <li key={h.lead} className="border-l-2 border-ember/60 pl-3">
+                  <span className="font-medium text-paper">{h.lead}. </span>
+                  <span className="text-muted">{h.text}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
     </Reveal>
   )
 }
 
-function ProjectCard({ p, ui, publications }) {
+function ProjectCard({ p, ui, publications, hidden }) {
   const related = (p.related || []).map((id) => publications.find((x) => x.id === id)).filter(Boolean)
   return (
-    <article aria-labelledby={`${p.id}-title`} className="group flex w-full flex-col rounded-2xl border border-line bg-ink-2 p-6 transition-colors duration-300 hover:border-ember/50">
+    <article aria-labelledby={`${p.id}-title`} hidden={hidden} className="group flex w-full flex-col rounded-2xl border border-line bg-ink-2 p-6 transition-colors duration-300 hover:border-ember/50">
       <div className="mb-4 flex flex-wrap items-center gap-2">
         <Status>{p.status}</Status>
       </div>
@@ -227,19 +216,30 @@ function ProjectCard({ p, ui, publications }) {
 
 export default function Projects() {
   const { t } = useLang()
-  const [chronicle, ...featured] = t.featured
+  const [expanded, setExpanded] = useState(false)
+  const moreCount = t.projects.filter((p) => p.more).length
   return (
     <Section id="projects" index="02" title={t.projectsTitle} intro={t.projectsIntro}>
       <div className="space-y-8">
-        <ChronicleCard p={chronicle} ui={t.ui} />
-        {featured.map((p) => <FeaturedCard key={p.id} p={p} ui={t.ui} />)}
+        {t.featured.map((p, i) => <FeaturedCard key={p.id} p={p} ui={t.ui} compact={i > 0} />)}
       </div>
       {/* Masonry columns: cards of different heights pack without holes. */}
-      <Reveal stagger className="mt-8 gap-6 md:columns-2 [&>*]:mb-6 [&>*]:break-inside-avoid">
+      <Reveal id="project-list" stagger className="mt-8 gap-6 md:columns-2 [&>*]:mb-6 [&>*]:break-inside-avoid">
         {t.projects.map((p) => (
-          <ProjectCard key={p.id} p={p} ui={t.ui} publications={t.publications} />
+          <ProjectCard key={p.id} p={p} ui={t.ui} publications={t.publications} hidden={p.more && !expanded} />
         ))}
       </Reveal>
+      {moreCount > 0 && (
+        <div className="mt-4">
+          <ShowMore
+            expanded={expanded}
+            onToggle={() => setExpanded((x) => !x)}
+            controls="project-list"
+            count={moreCount}
+            labels={{ more: t.ui.showAllProjects, less: t.ui.showLess }}
+          />
+        </div>
+      )}
     </Section>
   )
 }

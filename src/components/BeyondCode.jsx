@@ -1,6 +1,7 @@
 import { useLang } from '../i18n'
 import Section from './Section'
 import Reveal from './Reveal'
+import NewTab from './NewTab'
 
 // Round-robin across places so one trip doesn't fill a whole row (Edmonton, Toronto, Edmonton, …).
 function interleaveByPlace(items) {
@@ -90,7 +91,7 @@ export default function BeyondCode() {
                 {s.link && (
                   <a href={s.link.url} target="_blank" rel="noreferrer" className={`link-u self-start pt-5 text-sm ${side ? '' : 'mt-auto'}`}>
                     {s.link.label} <span aria-hidden="true">↗</span>
-                    <span className="sr-only"> (opens in a new tab)</span>
+                    <NewTab />
                   </a>
                 )}
               </div>

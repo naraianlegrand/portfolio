@@ -1,6 +1,7 @@
 import { useLang } from '../i18n'
 import Section from './Section'
 import Reveal from './Reveal'
+import NewTab from './NewTab'
 
 export default function Publications() {
   const { t } = useLang()
@@ -15,7 +16,7 @@ export default function Publications() {
                 {p.url ? (
                   <a href={p.url} target="_blank" rel="noreferrer" className="link-u">
                     {p.title} <span aria-hidden="true" className="text-ember text-xl">↗</span>
-                    <span className="sr-only"> (opens in a new tab)</span>
+                    <NewTab />
                   </a>
                 ) : (
                   p.title
@@ -33,7 +34,7 @@ export default function Publications() {
         ))}
       </Reveal>
 
-      <h3 className="eyebrow mt-12 mb-6">Awards</h3>
+      <h3 className="eyebrow mt-12 mb-6">{t.ui.awards}</h3>
       {/* Equal-height cards; proof (certificate image, link) sits in a matching footer row. */}
       <Reveal stagger className="grid gap-6 md:grid-cols-3">
         {t.awards.map((a) => (
@@ -61,7 +62,7 @@ export default function Publications() {
                 {a.link && (
                   <a href={a.link.url} target="_blank" rel="noreferrer" className="link-u text-sm">
                     {a.link.label} <span aria-hidden="true">↗</span>
-                    <span className="sr-only"> (opens in a new tab)</span>
+                    <NewTab />
                   </a>
                 )}
               </div>

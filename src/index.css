@@ -1,7 +1,6 @@
 @import 'tailwindcss';
 
-/* Design tokens: dark charcoal, warm paper text, ember accent.
-   Chronicle gets its own parchment / emerald / gold palette. */
+/* Design tokens: dark charcoal, warm paper text, ember accent. */
 @theme {
   --color-ink: #0f0f11;
   --color-ink-2: #17171a;
@@ -11,12 +10,6 @@
   --color-muted: #a29d94;
   --color-ember: #f0845a;
   --color-ember-soft: #f0845a1f;
-
-  --color-parchment: #f3e9d2;
-  --color-parchment-2: #e8d9b5;
-  --color-quill: #2b2418;
-  --color-emerald: #1f6b4f;
-  --color-gold: #b8913a;
 
   --font-display: 'Instrument Serif', Georgia, serif;
   --font-sans: 'Inter', system-ui, sans-serif;
@@ -121,6 +114,31 @@ html.lenis body {
   transform: none;
 }
 
+/* Live-site screenshot link: an ember glow that breathes slowly.
+   Animates opacity on a pseudo-element so it stays on the compositor. */
+.glow-pulse::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  box-shadow: 0 0 48px -2px var(--color-ember);
+  opacity: 0.3;
+  pointer-events: none;
+  animation: glow-pulse 3.2s ease-in-out infinite;
+  transition: opacity 0.3s;
+}
+.glow-pulse:hover::before,
+.glow-pulse:focus-visible::before {
+  animation: none;
+  opacity: 0.85;
+}
+@keyframes glow-pulse {
+  50% {
+    opacity: 0.7;
+  }
+}
+
 /* Visible before JS; Reveal hides then animates only when motion is allowed. */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -128,5 +146,10 @@ html.lenis body {
   *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
+  }
+  /* Steady glow instead of a pulse sped up to a flicker. */
+  .glow-pulse::before {
+    animation: none;
+    opacity: 0.5;
   }
 }

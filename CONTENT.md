@@ -7,7 +7,7 @@ Assets live in `../portfolio-assets/`.
 ACCURACY RULES (from the consolidated handoff, 2026-10-12)
 - Never include Sky UK / Firstsource customer-service employment anywhere.
 - Never invent metrics, results, technologies, awards, links, certifications or duties.
-- Chronicle is a concept in development: never present planned features as built.
+- Sloucher facts and numbers are measured: use them exactly as in the brief (portfolio-assets/portfolio_Sloucher_Project/SLOUCHER_PORTFOLIO_BRIEF.md). AMD Ryzen 7040/8040 on Windows 11 only today; NPU-only (no CPU fallback); not affiliated with or endorsed by AMD.
 - Resume Tailor API is tested locally; AWS Lambda is a planned deployment path, not live.
 - Cloud Tech's "future enhancements" (Lambda, API Gateway, SES, CodePipeline, CodeBuild, DynamoDB) are NOT implemented.
 - Cloud Tech website and AWS 3-Tier Architecture are separate projects.
@@ -15,7 +15,7 @@ ACCURACY RULES (from the consolidated handoff, 2026-10-12)
 - PennyWise links to the Springer and IFERP price papers, never the Big Data in Google paper.
 - Missing optional assets: hide gracefully. No broken links, empty image boxes or fake screenshots.
 - Contact form must not show a fake "Message sent" state.
-- French site copy is deferred; keep the structure ready for it.
+- French site copy lives in src/data/profile.fr.js (added 2026-10-31; Karthik to proofread). Translate faithfully; add nothing.
 -->
 
 ---
@@ -23,8 +23,9 @@ ACCURACY RULES (from the consolidated handoff, 2026-10-12)
 ## Site structure
 
 - **Navigation:** Home · About · Projects · Experience · Skills · Publications · Beyond Code · Contact
-- **Homepage spotlight:** Chronicle first (largest card, labelled In Development), then Serverless AI Resume Tailor API
+- **Homepage spotlight:** Sloucher first (Released · v0.1.0), then Serverless AI Resume Tailor API
 - **Project grouping:** clearly distinguish completed work, academic proposals, learning projects and work in progress
+- **Collapsed by default ("Show all" button):** projects Cloud Tech, PennyWise, AWS 3-Tier; experience Exam Invigilator, NetEase, Knowbility Media. Set `more: true` in profile.js to change.
 - **Travel gallery:** optional, inside Beyond Code; must not dominate the homepage
 
 ---
@@ -41,7 +42,7 @@ ACCURACY RULES (from the consolidated handoff, 2026-10-12)
 - **Photo (hero):** public/images/hero-480.webp · public/images/hero-720.webp · public/images/hero-1000.webp <!-- from portfolio-assets/Hero Image.jpeg (Place des Arts, Montréal); WebP, metadata stripped -->
 - **Photo (About):** public/images/grad-480.webp · public/images/grad-800.webp — caption "Concordia convocation, 2026" <!-- from portfolio-assets/Karthik_Grad.jpg, cropped, metadata stripped -->
 - **Resume PDF (EN):** public/resume/Karthikeyan-Umesh-Resume.pdf <!-- copied from portfolio-assets/General_resume_without mobile_number.pdf (phone-free, checked 2026-10-14). Linked from the hero and the Contact links. Resume_Karthik_General.pdf contains the phone number: never link it -->
-- **Resume PDF (FR):** deferred
+- **Resume PDF (FR):** none yet; the FR site links the English PDF, labelled "CV (PDF, en anglais)"
 
 <!-- Phone number stays off the public site. Email + contact form only. -->
 
@@ -64,7 +65,7 @@ ACCURACY RULES (from the consolidated handoff, 2026-10-12)
 
 **Sub-headline EN:** AWS Certified · M.Eng. Software Engineering, Concordia
 
-**FR:** deferred
+**FR:** Développeur infonuagique et logiciel (see src/data/profile.fr.js)
 
 ---
 
@@ -78,7 +79,7 @@ My background spans data science and software development, with strong Python an
 
 I enjoy turning complex problems into practical solutions, combining analytical thinking with creativity and a collaborative mindset. From developing software projects to exploring AI-driven automation, I value clear communication, continuous learning, and building technology that solves real-world problems. Outside of engineering, my passion for filmmaking has taught me to think from different perspectives, tell compelling stories, and bring ideas to life.
 
-**FR:** deferred
+**FR:** translated in src/data/profile.fr.js (faithful translation of the approved English)
 
 ---
 
@@ -86,22 +87,29 @@ I enjoy turning complex problems into practical solutions, combining analytical 
 
 <!-- First project = Featured Project on the site. -->
 
-### Chronicle ⭐ Featured
+### Sloucher ⭐ Featured
 
-<!-- Concept and planned feature set. No screenshots exist; use a concept presentation, not fake UI. -->
+<!-- Replaced Chronicle on 2026-10-31; Chronicle removed from the site at Karthik's request.
+     Source: portfolio-assets/portfolio_Sloucher_Project/SLOUCHER_PORTFOLIO_BRIEF.md. Numbers are measured: use them exactly. -->
 
-- **Status:** In Development (early-stage concept)
-- **Group:** Work in progress
-- **Tagline:** Cross-platform fantasy identity and social discovery app
-- **Description:** Users enter fantasy-inspired dating and personality traits to create a fantasy version of themselves. Chronicle turns that information into visually rich personal dashboards, inspired by business analytics dashboards but focused on a person's fantasy identity. Users can become friends and explore each other's dashboards. It is not meant to be another Facebook or Tinder: the idea is a playful, immersive world where people discover each other through beautifully presented fantasy identities.
-- **Core experience (planned):** Character creation, personalized dashboards, friends and social discovery
-- **Visual direction:** Fantasy kingdoms with a lighter, whimsical tone: warm parchment, emerald accents, elegant gold details, magical-journal interface elements, refined typography, subtle decoration, modern dashboard usability. Settings can evoke rural kingdoms, urban fantasy or cyberpunk. Witcher 3-era atmosphere as inspiration only; no copied artwork or branding.
-- **Current progress:** Repository set up; build not started yet.
+- **Status:** Released · v0.1.0, October 2026 (first public release Oct 29, 2026; built in Montréal, solo)
+- **Group:** Completed work
+- **Tagline:** An always-on posture coach that runs its AI on the laptop's NPU, not the CPU: about 1% CPU, and the video never leaves the laptop.
+- **Description:** It watches your posture through the webcam: slouch for most of 30 seconds and the screen edges glow; once an hour it sends you for a walk. I took it from an idea to a released, open-source Windows app on my own: model quantization, NPU debugging, the app, the installer and a bilingual website. <!-- Elevator pitch (Karthik asked to shorten it, 2026-10-31); the measured detail lives in Highlights -->
+- **Long description (brief, not shown):** Built and shipped a Windows desktop app that watches posture through the webcam and runs its pose model on the AMD Ryzen AI NPU. Quantized YOLOv8n-pose to INT8 on recorded desk clips (96.5% of operators on the NPU, 12-17 ms per frame); posture logic compares face and shoulder ratios with the user's calibrated posture; tracing cut whole-app CPU from 44% to 0.8%; 39 MB installer with hardware detection and a self-test.
+- **Note:** Runs on Windows 11 laptops with an AMD Ryzen 7040 or 8040 today; Intel, Snapdragon and Mac ports are planned. Free and open source (AGPL-3.0). Privacy by design: each camera frame becomes 17 body points on the NPU and is discarded; nothing is uploaded or stored.
+- **Highlights (shortened 2026-10-31 to match the card's left column):**
+  - 96.5% on the NPU, 0.8% CPU: INT8 YOLOv8n-pose at 12-17 ms per frame; fixing ONNX Runtime's busy-waiting thread pool cut whole-app CPU from 44%
+  - No false alarms: on 9 recorded desk clips, all 3 bad-posture clips alert at 30 s and none of the 6 good ones do
+  - Shipped like a product: 39 MB installer, no admin rights, self-test, checksummed GitHub Release, tests on every push
+  - Private by design: no account, no cloud, no telemetry; built with Québec's Law 25 in mind
+- **Lead image:** links to the live site, with a slow ember glow
 - **Role:** Solo
-- **Tech:** Flutter (planned targets: web, iOS, Android) <!-- iOS is long-term; no Mac yet -->
-- **Live URL:** n/a
-- **Repo URL:** https://github.com/naraianlegrand/chronicle-app <!-- PRIVATE: visitors get a 404 -->
-- **Screenshot(s):** none (concept presentation instead)
+- **Tech:** Python 3.12, ONNX Runtime, AMD Ryzen AI 1.6.1 (Vitis AI EP), YOLOv8n-pose (INT8), AMD Quark quantization, NumPy, OpenCV, Tkinter, pystray, PyInstaller, Inno Setup, pytest, GitHub Actions, HTML/CSS/JS, Cloudflare Pages
+- **Live URL:** https://sloucher.karthikeyanumesh.com
+- **Story URL:** https://sloucher.karthikeyanumesh.com/story/
+- **Repo URL:** https://github.com/naraianlegrand/sloucher_ai (public)
+- **Screenshot(s):** public/assets/sloucher-hero.webp · public/assets/sloucher-cpu.webp · public/assets/sloucher-walk.webp
 
 ### Serverless AI Resume Tailor API
 
@@ -206,17 +214,17 @@ I enjoy turning complex problems into practical solutions, combining analytical 
 
 <!-- Descriptive title, not a formally assigned one. No invented conversion or growth metrics. -->
 
-- **Dates:** Aug 2026 – Present
+- **Dates:** Aug 2026 – Oct 2026 <!-- ended Oct 1, 2026 -->
 - **Arrangement:** Part-time, unpaid
 - **Location:** [CITY / Remote]
 - **Company URL:** [URL]
-- **Summary:** Contribute to business operations and procurement while supporting client acquisition for CRM software and AI integration services. Conduct outreach to prospective clients, help identify business opportunities, and contribute to data analysis and AI-driven automation initiatives.
+- **Summary:** Contributed to business operations and procurement while supporting client acquisition for CRM software and AI integration services. Conducted outreach to prospective clients, helped identify business opportunities, and contributed to data analysis and AI-driven automation initiatives.
 - **Highlights:**
   - Contacted hundreds of prospective clients through outreach
 
 ### Exam Invigilator — Concordia University
 
-- **Dates:** Apr 2026 – Present
+- **Dates:** Apr 2026 – Sep 2026 <!-- end month per Karthik, 2026-10-31: confirm -->
 - **Arrangement:** Contract, part-time
 - **Location:** Montréal · On-site
 - **Summary:** Monitored examination environments to support academic integrity, assisted students with exam procedures, and coordinated with administrative staff to keep exam operations smooth and professional.
@@ -237,6 +245,7 @@ I enjoy turning complex problems into practical solutions, combining analytical 
 ### Quality Assurance & Hardware Tester (Freelance) — NetEase Games Montréal
 
 - **Dates:** 2025
+- **Engagement:** One day, under NDA
 - **Location:** Montréal, QC
 - **Summary:** Manual testing and QA to find defects and keep game software performing well.
 - **Highlights:**
@@ -280,10 +289,10 @@ I enjoy turning complex problems into practical solutions, combining analytical 
 
 - **Languages:** Python, Java, SQL, JavaScript, HTML/CSS
 - **Backend & APIs:** FastAPI, Pydantic, HTTPX, asyncio, Flask, Play Framework, Akka, WebSockets, REST APIs, PostgreSQL
-- **Cloud & DevOps:** AWS (EC2, S3, Lambda via Mangum, S3 static hosting), Docker, Git, CI/CD, Linux/Unix
-- **AI & Data:** Gemini API, machine learning (regression models), data analysis
-- **Frontend:** React, HTML5, CSS3
-- **Quality:** Manual and automated testing, code reviews, Sonar, Javadoc
+- **Cloud & DevOps:** AWS (EC2, S3, Lambda via Mangum, S3 static hosting), Cloudflare Pages, Docker, Git, GitHub Actions, CI/CD, Linux/Unix
+- **AI & Data:** ONNX Runtime, AMD Ryzen AI (NPU), INT8 quantization (AMD Quark), YOLOv8n-pose, OpenCV, NumPy, Gemini API, machine learning (regression models), data analysis <!-- NPU/ONNX/OpenCV etc. backed by Sloucher -->
+- **Frontend & desktop:** React, HTML5, CSS3, Tkinter, pystray, PyInstaller, Inno Setup
+- **Quality:** Manual and automated testing, pytest, code reviews, Sonar, Javadoc
 - **Practices:** Object-oriented design, Agile, software project management, requirements analysis, risk management
 - **Currently learning:** Terraform, AWS Solutions Architect – Associate
 
