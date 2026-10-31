@@ -21,7 +21,9 @@ function TravelGallery({ title, items }) {
       <h3 className="eyebrow mb-5">{title}</h3>
       <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {withPhotos.map((i) => (
-          <li key={i.place + i.when}>
+          // Key by photo: several cards share a place and date (Edmonton · Oct 2026), and duplicate
+          // keys made React keep stale cards when the language switched.
+          <li key={i.photo.src}>
             <figure className="overflow-hidden rounded-2xl border border-line bg-ink-2">
               <img
                 src={i.photo.src}
