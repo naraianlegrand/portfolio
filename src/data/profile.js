@@ -522,7 +522,12 @@ const en = {
         dates: 'Sep 2025 – Apr 2026',
         detail: 'Represented graduate student interests in university-level student-life decisions and voted on student-focused initiatives and funding for student-led programs.',
       },
-      { role: 'Event Coordinator', org: 'Concordia Filmmaking Club', dates: 'Sep 2025 – May 2026' },
+      {
+        role: 'Event Coordinator',
+        org: 'Concordia Filmmaking Club',
+        dates: 'Sep 2025 – May 2026',
+        detail: 'Organized Film Jam, coordinated a short film made under the club, and organized a meet-and-greet with filmmakers from Montréal and Concordia University.',
+      },
       {
         role: 'Participant',
         org: 'Concordia Homeroom',

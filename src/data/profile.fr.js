@@ -386,7 +386,11 @@ export const frOverrides = {
         dates: 'sept. 2025 – avr. 2026',
         detail: "J'ai représenté les intérêts des étudiants des cycles supérieurs dans les décisions universitaires sur la vie étudiante et voté sur des initiatives étudiantes et le financement de programmes menés par des étudiants.",
       },
-      { role: "Coordonnateur d'événements", dates: 'sept. 2025 – mai 2026' },
+      {
+        role: "Coordonnateur d'événements",
+        dates: 'sept. 2025 – mai 2026',
+        detail: "Organisation du Film Jam, coordination d'un court métrage réalisé au sein du club et organisation d'une rencontre avec des cinéastes de Montréal et de l'Université Concordia.",
+      },
       {
         dates: 'Été 2024',
         detail: "Rencontres étudiantes de fin de semaine à mon arrivée à Concordia, pour bâtir une communauté autour de discussions et d'activités.",

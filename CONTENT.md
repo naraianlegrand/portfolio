@@ -414,7 +414,7 @@ I studied French through MIFI at EMULCQ (near Vendôme station) for about a year
 ### Leadership and student engagement
 
 - **Board Member (Graduate Student Representative), Concordia Council on Student Life (CCSL)**, Sep 2025 – Apr 2026: represented graduate student interests in university-level student-life decisions, voted on student-focused initiatives and funding for student-led programs, and worked with faculty and administrative stakeholders to advocate for student needs.
-- **Event Coordinator, Concordia Filmmaking Club**, Sep 2025 – May 2026
+- **Event Coordinator, Concordia Filmmaking Club**, Sep 2025 – May 2026: organized Film Jam, coordinated a short film made under the club, and organized a meet-and-greet with filmmakers from Montréal and Concordia University. <!-- per Karthik, 2026-10-31; only these three for now -->
 - **Participant, [Concordia Homeroom](https://www.concordia.ca/students/homeroom.html)**, Summer 2024: regular weekend student meetups when I first joined Concordia, building community through discussions and activities.
 - **Menstrual Health Educator Volunteer, Marshel**, Jul 2022: ran household awareness sessions on menstrual health and hygiene.
 
