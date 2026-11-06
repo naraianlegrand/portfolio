@@ -110,7 +110,7 @@ I enjoy turning complex problems into practical solutions, combining analytical 
 - **Live URL:** https://sloucher.karthikeyanumesh.com
 - **Story URL:** https://sloucher.karthikeyanumesh.com/story/
 - **Repo URL:** https://github.com/naraianlegrand/sloucher_ai (public)
-- **Screenshot(s):** public/assets/sloucher-hero.webp · public/assets/sloucher-cpu.webp · public/assets/sloucher-walk.webp · public/assets/sloucher-stats.webp (Stats window, sample week)
+- **Screenshot(s):** public/assets/sloucher-hero.webp · public/assets/sloucher-cpu.webp · public/assets/sloucher-stats.webp (Stats window, sample week) <!-- walk image removed at Karthik's request, 2026-11-06 -->
 
 ### Serverless AI Resume Tailor API
 

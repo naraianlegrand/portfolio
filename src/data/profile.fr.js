@@ -114,7 +114,6 @@ export const frOverrides = {
       images: [
         { alt: 'Site de Sloucher : « Your laptop has an AI chip that sits idle. Let it fix your posture. »' },
         { alt: "Graphique de l'utilisation du processeur de toute l'application : réglages par défaut d'ONNX Runtime 44 %, attente active désactivée 3 %, Sloucher à 2 images/s 0,8 %" },
-        { alt: 'Animation au défilement sur le site : une personne se rassoit devant un portable qui affiche « Not done yet: 18 s left »' },
         { alt: "La fenêtre Stats de Sloucher : aujourd'hui 72 % bien droit, les alertes, le temps pour se redresser, et les 7 derniers jours en barres (semaine d'exemple)" },
       ],
     },

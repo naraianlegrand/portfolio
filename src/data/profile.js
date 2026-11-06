@@ -146,7 +146,6 @@ const en = {
       images: [
         { src: A + 'sloucher-hero.webp', alt: 'Sloucher website: "Your laptop has an AI chip that sits idle. Let it fix your posture."', width: 1400, height: 800 },
         { src: A + 'sloucher-cpu.webp', alt: 'Chart of whole-app CPU use: ONNX Runtime defaults 44%, thread spinning off 3%, Sloucher at 2 fps 0.8%', width: 1200, height: 520 },
-        { src: A + 'sloucher-walk.webp', alt: 'Scroll animation on the website: a person sits back down at a laptop showing "Not done yet: 18 s left"', width: 1400, height: 800 },
         { src: A + 'sloucher-stats.webp', alt: 'The Sloucher Stats window: today 72% upright, alerts, time to sit up, and the last 7 days as bars (sample week)', width: 769, height: 913 },
       ],
     },
