@@ -31,7 +31,7 @@ Personal portfolio site. `CONTENT.md` is the source of truth for all copy; `src/
 
 1. Never include Sky UK / Firstsource customer-service employment anywhere.
 2. Never invent metrics, results, technologies, awards, links, certifications, duties or deployment status.
-3. Sloucher (featured, Released v0.1.0): use the measured numbers exactly as in `portfolio-assets/portfolio_Sloucher_Project/SLOUCHER_PORTFOLIO_BRIEF.md`. It runs on AMD Ryzen 7040/8040 + Windows 11 only today (other ports are planned), is NPU-only (never "CPU or NPU"), and is not affiliated with or endorsed by AMD. Chronicle was removed from the site (2026-10-31).
+3. Sloucher (featured, Released v0.2.0): use the measured numbers exactly as in `portfolio-assets/portfolio_Sloucher_Project/SLOUCHER_PORTFOLIO_BRIEF.md`. It runs on AMD Ryzen 7040/8040 + Windows 11 only today (other ports are planned), is NPU-only (never "CPU or NPU"), and is not affiliated with or endorsed by AMD. Chronicle was removed from the site (2026-10-31).
 4. Serverless AI Resume Tailor API is tested locally. AWS Lambda is a planned deployment path, not live. It calls Gemini through HTTPX, not the Google GenAI SDK. The match score of 48 is an example output, not an accuracy claim.
 5. Cloud Tech's "future enhancements" (Lambda, API Gateway, SES, CodePipeline, CodeBuild, DynamoDB) are not implemented. Its S3 live link is broken: do not link it until it works.
 6. Cloud Tech (learning website) and AWS 3-Tier Architecture with Terraform (In Progress) are separate projects.

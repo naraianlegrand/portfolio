@@ -23,7 +23,7 @@ ACCURACY RULES (from the consolidated handoff, 2026-10-12)
 ## Site structure
 
 - **Navigation:** Home · About · Projects · Experience · Skills · Publications · Beyond Code · Contact
-- **Homepage spotlight:** Sloucher first (Released · v0.1.0), then Serverless AI Resume Tailor API
+- **Homepage spotlight:** Sloucher first (Released · v0.2.0), then Serverless AI Resume Tailor API
 - **Project grouping:** clearly distinguish completed work, academic proposals, learning projects and work in progress
 - **Collapsed by default ("Show all" button):** projects Cloud Tech, PennyWise, AWS 3-Tier; experience Exam Invigilator, NetEase, Knowbility Media. Set `more: true` in profile.js to change.
 - **Travel gallery:** optional, inside Beyond Code; must not dominate the homepage
@@ -92,24 +92,25 @@ I enjoy turning complex problems into practical solutions, combining analytical 
 <!-- Replaced Chronicle on 2026-10-31; Chronicle removed from the site at Karthik's request.
      Source: portfolio-assets/portfolio_Sloucher_Project/SLOUCHER_PORTFOLIO_BRIEF.md. Numbers are measured: use them exactly. -->
 
-- **Status:** Released · v0.1.0, October 2026 (first public release Oct 29, 2026; built in Montréal, solo)
+- **Status:** Released · v0.2.0, November 2026 (v0.1.0 Oct 29, 2026; v0.2.0 Nov 6, 2026; built in Montréal, solo) <!-- brief section 8 -->
 - **Group:** Completed work
 - **Tagline:** An always-on posture coach that runs its AI on the laptop's NPU, not the CPU: about 1% CPU, and the video never leaves the laptop.
 - **Description:** It watches your posture through the webcam: slouch for most of 30 seconds and the screen edges glow; once an hour it sends you for a walk. I took it from an idea to a released, open-source Windows app on my own: model quantization, NPU debugging, the app, the installer and a bilingual website. <!-- Elevator pitch (Karthik asked to shorten it, 2026-10-31); the measured detail lives in Highlights -->
-- **Long description (brief, not shown):** Built and shipped a Windows desktop app that watches posture through the webcam and runs its pose model on the AMD Ryzen AI NPU. Quantized YOLOv8n-pose to INT8 on recorded desk clips (96.5% of operators on the NPU, 12-17 ms per frame); posture logic compares face and shoulder ratios with the user's calibrated posture; tracing cut whole-app CPU from 44% to 0.8%; 39 MB installer with hardware detection and a self-test.
-- **Note:** Runs on Windows 11 laptops with an AMD Ryzen 7040 or 8040 today; Intel, Snapdragon and Mac ports are planned. Free and open source (AGPL-3.0). Privacy by design: each camera frame becomes 17 body points on the NPU and is discarded; nothing is uploaded or stored.
-- **Highlights (shortened 2026-10-31 to match the card's left column):**
-  - 96.5% on the NPU, 0.8% CPU: INT8 YOLOv8n-pose at 12-17 ms per frame; fixing ONNX Runtime's busy-waiting thread pool cut whole-app CPU from 44%
-  - No false alarms: on 9 recorded desk clips, all 3 bad-posture clips alert at 30 s and none of the 6 good ones do
-  - Shipped like a product: 39 MB installer, no admin rights, self-test, checksummed GitHub Release, tests on every push
+- **Long description (brief, not shown):** Built and shipped a Windows desktop app that watches posture through the webcam and runs its pose model on the AMD Ryzen AI NPU. Quantized YOLOv8n-pose to INT8 on recorded desk clips (96.5% of operators on the NPU, 12-17 ms per frame); posture logic compares face and shoulder ratios with the user's calibrated posture; tracing cut whole-app CPU from 44% to about 1% (0.8-1.05% measured); 39.6 MB installer with hardware detection and a self-test. v0.2 adds per-minute posture stats, a coach summary, a walk card and Settings.
+- **Note:** Runs on Windows 11 laptops with an AMD Ryzen 7040 or 8040 today; Intel, Snapdragon and Mac ports are planned. Free and open source (AGPL-3.0). Privacy by design: each camera frame becomes 17 body points on the NPU and is discarded; only posture numbers are kept, on the laptop, and nothing is uploaded.
+- **Highlights (shortened 2026-10-31 to match the card's left column; v0.2 update 2026-11-06):**
+  - 96.5% on the NPU, about 1% CPU: INT8 YOLOv8n-pose at 12-17 ms per frame; fixing ONNX Runtime's busy-waiting thread pool cut whole-app CPU from 44%
+  - No false alarms: on 9 recorded desk clips, all 3 bad-posture clips alert at 30 s and none of the other 6 do
+  - Stats for an AI coach: v0.2 adds per-minute posture stats, a week view and a one-click summary to paste into Gemini, ChatGPT or Claude, all kept on the laptop
+  - Shipped like a product: two releases in 8 days: 39.6 MB installer, no admin rights, self-test, checksummed GitHub Releases, protected main branch, tests on every pull request
   - Private by design: no account, no cloud, no telemetry; built with Québec's Law 25 in mind
 - **Lead image:** links to the live site, with a slow ember glow
 - **Role:** Solo
-- **Tech:** Python 3.12, ONNX Runtime, AMD Ryzen AI 1.6.1 (Vitis AI EP), YOLOv8n-pose (INT8), AMD Quark quantization, NumPy, OpenCV, Tkinter, pystray, PyInstaller, Inno Setup, pytest, GitHub Actions, HTML/CSS/JS, Cloudflare Pages
+- **Tech:** Python 3.12, ONNX Runtime, AMD Ryzen AI 1.6.1 (Vitis AI EP), YOLOv8n-pose (INT8), AMD Quark quantization, NumPy, OpenCV, Tkinter, Pillow, pystray, Windows APIs (DWM, WTS), PyInstaller, Inno Setup, pytest, GitHub Actions, HTML/CSS/JS, Cloudflare Pages
 - **Live URL:** https://sloucher.karthikeyanumesh.com
 - **Story URL:** https://sloucher.karthikeyanumesh.com/story/
 - **Repo URL:** https://github.com/naraianlegrand/sloucher_ai (public)
-- **Screenshot(s):** public/assets/sloucher-hero.webp · public/assets/sloucher-cpu.webp · public/assets/sloucher-walk.webp
+- **Screenshot(s):** public/assets/sloucher-hero.webp · public/assets/sloucher-cpu.webp · public/assets/sloucher-stats.webp (Stats window, sample week) <!-- walk image removed at Karthik's request, 2026-11-06 -->
 
 ### Serverless AI Resume Tailor API
 
