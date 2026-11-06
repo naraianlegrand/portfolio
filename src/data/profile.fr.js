@@ -96,17 +96,18 @@ export const frOverrides = {
 
   featured: [
     {
-      status: 'Publié · v0.1.0, octobre 2026',
+      status: 'Publié · v0.2.0, novembre 2026',
       group: 'Projet terminé',
       tagline:
         "Un coach de posture toujours actif qui fait tourner son IA sur le NPU du portable, pas sur le processeur : environ 1 % du processeur, et la vidéo ne quitte jamais l'ordinateur.",
       description:
         "Il surveille votre posture par la webcam : si vous vous affaissez pendant la majeure partie de 30 secondes, les bords de l'écran s'illuminent; une fois par heure, il vous envoie marcher. Je l'ai mené seul de l'idée à une application Windows publiée et open source : quantification du modèle, débogage du NPU, l'application, l'installateur et un site bilingue.",
-      note: "Fonctionne aujourd'hui sur les portables Windows 11 équipés d'un AMD Ryzen 7040 ou 8040; des versions pour Intel, Snapdragon et Mac sont prévues. Gratuit et open source (AGPL-3.0). Confidentialité dès la conception : chaque image de la caméra devient 17 points du corps sur le NPU, puis est supprimée; rien n'est envoyé ni stocké.",
+      note: "Fonctionne aujourd'hui sur les portables Windows 11 équipés d'un AMD Ryzen 7040 ou 8040; des versions pour Intel, Snapdragon et Mac sont prévues. Gratuit et open source (AGPL-3.0). Confidentialité dès la conception : chaque image de la caméra devient 17 points du corps sur le NPU, puis est supprimée; seuls des nombres sur la posture sont gardés, sur le portable, et rien n'est envoyé.",
       highlights: [
-        { lead: '96,5 % sur le NPU, 0,8 % du processeur', text: "YOLOv8n-pose en INT8 à 12-17 ms par image; corriger l'attente active du pool de threads d'ONNX Runtime a fait passer l'utilisation du processeur de toute l'application de 44 % à 0,8 %." },
-        { lead: 'Aucune fausse alerte', text: 'Sur 9 séquences filmées au bureau, les 3 séquences de mauvaise posture déclenchent une alerte à 30 s, et aucune des 6 bonnes.' },
-        { lead: 'Livré comme un produit', text: "Installateur de 39 Mo, sans droits d'administrateur, autotest, version GitHub avec sommes de contrôle, tests à chaque push." },
+        { lead: '96,5 % sur le NPU, environ 1 % du processeur', text: "YOLOv8n-pose en INT8 à 12-17 ms par image; corriger l'attente active du pool de threads d'ONNX Runtime a fait passer l'utilisation du processeur de toute l'application de 44 % à environ 1 %." },
+        { lead: 'Aucune fausse alerte', text: 'Sur 9 séquences filmées au bureau, les 3 séquences de mauvaise posture déclenchent une alerte à 30 s, et aucune des 6 autres.' },
+        { lead: 'Des stats pour un coach IA', text: "La v0.2 ajoute des statistiques de posture à la minute, une vue de la semaine et un résumé en un clic à coller dans Gemini, ChatGPT ou Claude, le tout gardé sur le portable." },
+        { lead: 'Livré comme un produit', text: "Deux versions en 8 jours : installateur de 39,6 Mo, sans droits d'administrateur, autotest, versions GitHub avec sommes de contrôle, branche principale protégée, tests à chaque demande de tirage." },
         { lead: 'Confidentialité dès la conception', text: 'Aucun compte, aucun nuage, aucune télémétrie; conçu en tenant compte de la Loi 25 du Québec.' },
       ],
       role: 'En solo',
@@ -114,6 +115,7 @@ export const frOverrides = {
         { alt: 'Site de Sloucher : « Your laptop has an AI chip that sits idle. Let it fix your posture. »' },
         { alt: "Graphique de l'utilisation du processeur de toute l'application : réglages par défaut d'ONNX Runtime 44 %, attente active désactivée 3 %, Sloucher à 2 images/s 0,8 %" },
         { alt: 'Animation au défilement sur le site : une personne se rassoit devant un portable qui affiche « Not done yet: 18 s left »' },
+        { alt: "La fenêtre Stats de Sloucher : aujourd'hui 72 % bien droit, les alertes, le temps pour se redresser, et les 7 derniers jours en barres (semaine d'exemple)" },
       ],
     },
     {

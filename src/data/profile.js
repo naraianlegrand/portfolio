@@ -123,22 +123,23 @@ const en = {
       id: 'sloucher',
       variant: 'default',
       name: 'Sloucher',
-      status: 'Released · v0.1.0, October 2026',
+      status: 'Released · v0.2.0, November 2026',
       group: 'Completed work',
       tagline:
         "An always-on posture coach that runs its AI on the laptop's NPU, not the CPU: about 1% CPU, and the video never leaves the laptop.",
       // Elevator pitch; the measured detail lives in `highlights`.
       description:
         'It watches your posture through the webcam: slouch for most of 30 seconds and the screen edges glow; once an hour it sends you for a walk. I took it from an idea to a released, open-source Windows app on my own: model quantization, NPU debugging, the app, the installer and a bilingual website.',
-      note: 'Runs on Windows 11 laptops with an AMD Ryzen 7040 or 8040 today; Intel, Snapdragon and Mac ports are planned. Free and open source (AGPL-3.0). Privacy by design: each camera frame becomes 17 body points on the NPU and is discarded; nothing is uploaded or stored.',
+      note: 'Runs on Windows 11 laptops with an AMD Ryzen 7040 or 8040 today; Intel, Snapdragon and Mac ports are planned. Free and open source (AGPL-3.0). Privacy by design: each camera frame becomes 17 body points on the NPU and is discarded; only posture numbers are kept, on the laptop, and nothing is uploaded.',
       highlights: [
-        { lead: '96.5% on the NPU, 0.8% CPU', text: "INT8 YOLOv8n-pose at 12-17 ms per frame; fixing ONNX Runtime's busy-waiting thread pool cut whole-app CPU from 44%." },
-        { lead: 'No false alarms', text: 'On 9 recorded desk clips, all 3 bad-posture clips alert at 30 s and none of the 6 good ones do.' },
-        { lead: 'Shipped like a product', text: '39 MB installer, no admin rights, self-test, checksummed GitHub Release, tests on every push.' },
+        { lead: '96.5% on the NPU, about 1% CPU', text: "INT8 YOLOv8n-pose at 12-17 ms per frame; fixing ONNX Runtime's busy-waiting thread pool cut whole-app CPU from 44%." },
+        { lead: 'No false alarms', text: 'On 9 recorded desk clips, all 3 bad-posture clips alert at 30 s and none of the other 6 do.' },
+        { lead: 'Stats for an AI coach', text: 'v0.2 adds per-minute posture stats, a week view and a one-click summary to paste into Gemini, ChatGPT or Claude, all kept on the laptop.' },
+        { lead: 'Shipped like a product', text: 'Two releases in 8 days: 39.6 MB installer, no admin rights, self-test, checksummed GitHub Releases, protected main branch, tests on every pull request.' },
         { lead: 'Private by design', text: "No account, no cloud, no telemetry; built with Québec's Law 25 in mind." },
       ],
       role: 'Solo',
-      tech: ['Python 3.12', 'ONNX Runtime', 'AMD Ryzen AI 1.6.1 (Vitis AI EP)', 'YOLOv8n-pose (INT8)', 'AMD Quark quantization', 'NumPy', 'OpenCV', 'Tkinter', 'pystray', 'PyInstaller', 'Inno Setup', 'pytest', 'GitHub Actions', 'HTML/CSS/JS', 'Cloudflare Pages'],
+      tech: ['Python 3.12', 'ONNX Runtime', 'AMD Ryzen AI 1.6.1 (Vitis AI EP)', 'YOLOv8n-pose (INT8)', 'AMD Quark quantization', 'NumPy', 'OpenCV', 'Tkinter', 'Pillow', 'pystray', 'Windows APIs (DWM, WTS)', 'PyInstaller', 'Inno Setup', 'pytest', 'GitHub Actions', 'HTML/CSS/JS', 'Cloudflare Pages'],
       repo: { url: 'https://github.com/naraianlegrand/sloucher_ai', private: false },
       live: 'https://sloucher.karthikeyanumesh.com',
       story: 'https://sloucher.karthikeyanumesh.com/story/',
@@ -146,6 +147,7 @@ const en = {
         { src: A + 'sloucher-hero.webp', alt: 'Sloucher website: "Your laptop has an AI chip that sits idle. Let it fix your posture."', width: 1400, height: 800 },
         { src: A + 'sloucher-cpu.webp', alt: 'Chart of whole-app CPU use: ONNX Runtime defaults 44%, thread spinning off 3%, Sloucher at 2 fps 0.8%', width: 1200, height: 520 },
         { src: A + 'sloucher-walk.webp', alt: 'Scroll animation on the website: a person sits back down at a laptop showing "Not done yet: 18 s left"', width: 1400, height: 800 },
+        { src: A + 'sloucher-stats.webp', alt: 'The Sloucher Stats window: today 72% upright, alerts, time to sit up, and the last 7 days as bars (sample week)', width: 769, height: 913 },
       ],
     },
     {
