@@ -133,6 +133,11 @@ export const frOverrides = {
         { lead: 'Reproductible', text: "Construite à partir de zéro, détruite puis reconstruite sans aucune étape manuelle. Chaque demande de tirage d'infrastructure exécute fmt, validate, tflint, une analyse de sécurité Checkov et un plan en lecture seule." },
       ],
       role: 'En solo',
+      images: [
+        { alt: "Carte des ressources du VPC AWS : 6 sous-réseaux répartis sur ca-central-1a et 1b (publics, applicatifs, base de données), 4 tables de routage, et les liens vers la passerelle Internet, la passerelle NAT et le point de terminaison S3" },
+        { alt: "Activité du groupe Auto Scaling : une instance retirée du service après l'échec d'une vérification de l'état ELB, puis une instance de remplacement lancée" },
+        { alt: "Courriel d'alarme CloudWatch d'AWS Notifications : engops-portal-dev-alb-5xx est passée de OK à ALARM" },
+      ],
     },
   ],
 

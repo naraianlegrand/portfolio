@@ -169,9 +169,14 @@ const en = {
       ],
       role: 'Solo',
       tech: ['Terraform', 'AWS VPC', 'EC2 Auto Scaling', 'Application Load Balancer', 'RDS PostgreSQL', 'S3', 'IAM', 'Secrets Manager', 'CloudWatch', 'SNS', 'ECR', 'SSM Session Manager', 'Docker', 'Python 3.12', 'FastAPI', 'SQLAlchemy', 'Alembic', 'pytest', 'GitHub Actions (OIDC)', 'tflint', 'Checkov'],
-      repo: { url: 'https://github.com/naraianlegrand/aws-3tier-engops-portal', private: true },
+      repo: { url: 'https://github.com/naraianlegrand/aws-3tier-engops-portal', private: false },
       live: null, // destroyed between demos: never link the ALB URL
-      images: [], // Step 9 screenshots go here once processed into public/assets/
+      // From the repo's docs/screenshots (Step 9, 2026-11-08), cropped; sources in portfolio-assets/aws-3tier/.
+      images: [
+        { src: A + 'aws3tier-vpc-map.webp', alt: 'AWS VPC resource map: 6 subnets across ca-central-1a and 1b (public, app, database), 4 route tables, and connections to the internet gateway, NAT gateway and S3 endpoint', width: 1400, height: 414 },
+        { src: A + 'aws3tier-self-heal.webp', alt: 'Auto Scaling Group activity: an instance taken out of service after an ELB health check failure and a replacement launched', width: 1400, height: 335 },
+        { src: A + 'aws3tier-alarm-email.webp', alt: 'CloudWatch alarm email from AWS Notifications: engops-portal-dev-alb-5xx changed from OK to ALARM', width: 1400, height: 565 },
+      ],
     },
   ],
 

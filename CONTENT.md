@@ -133,8 +133,8 @@ I enjoy turning complex problems into practical solutions, combining analytical 
 - **Role:** Solo
 - **Tech:** Terraform, AWS VPC, EC2 Auto Scaling, Application Load Balancer, RDS PostgreSQL, S3, IAM, Secrets Manager, CloudWatch, SNS, ECR, SSM Session Manager, Docker, Python 3.12, FastAPI, SQLAlchemy, Alembic, pytest, GitHub Actions (OIDC), tflint, Checkov
 - **Live URL:** none (destroyed between demos)
-- **Repo URL:** https://github.com/naraianlegrand/aws-3tier-engops-portal <!-- private until Karthik makes it public; renders as "Private repo" -->
-- **Screenshot(s):** [pending: Step 9 screenshots from the repo's docs/screenshots/]
+- **Repo URL:** https://github.com/naraianlegrand/aws-3tier-engops-portal (public since 2026-11-09)
+- **Screenshot(s):** public/assets/aws3tier-vpc-map.webp (lead) · public/assets/aws3tier-self-heal.webp · public/assets/aws3tier-alarm-email.webp <!-- cropped from the repo's docs/screenshots (Step 9, 2026-11-08); sources in portfolio-assets/aws-3tier/ -->
 
 ### Serverless AI Resume Tailor API
 
