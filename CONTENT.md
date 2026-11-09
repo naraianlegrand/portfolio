@@ -23,9 +23,9 @@ ACCURACY RULES (from the consolidated handoff, 2026-10-12)
 ## Site structure
 
 - **Navigation:** Home · About · Projects · Experience · Skills · Publications · Beyond Code · Contact
-- **Homepage spotlight:** Sloucher first (Released · v0.2.0), then Serverless AI Resume Tailor API
+- **Homepage spotlight:** only two featured projects: Sloucher first (Released · v0.2.0), then AWS 3-Tier Architecture with Terraform
 - **Project grouping:** clearly distinguish completed work, academic proposals, learning projects and work in progress
-- **Collapsed by default ("Show all" button):** projects Cloud Tech, PennyWise, AWS 3-Tier; experience Exam Invigilator, NetEase, Knowbility Media. Set `more: true` in profile.js to change.
+- **Collapsed by default ("Show all" button):** every non-featured project (Resume Tailor, TubeLytics, Academic Advisor, Cloud Tech, PennyWise); experience Exam Invigilator, NetEase, Knowbility Media. Set `more: true` in profile.js to change.
 - **Travel gallery:** optional, inside Beyond Code; must not dominate the homepage
 
 ---
@@ -112,7 +112,33 @@ I enjoy turning complex problems into practical solutions, combining analytical 
 - **Repo URL:** https://github.com/naraianlegrand/sloucher_ai (public)
 - **Screenshot(s):** public/assets/sloucher-hero.webp · public/assets/sloucher-cpu.webp · public/assets/sloucher-stats.webp (Stats window, sample week) <!-- walk image removed at Karthik's request, 2026-11-06 -->
 
+### AWS 3-Tier Architecture with Terraform ⭐ Featured
+
+<!-- Featured from 2026-11-09 (was a minimal "In Progress" card). Source of truth for facts:
+     github.com/naraianlegrand/aws-3tier-engops-portal README + docs/adr (ADR 0001-0010).
+     Deployed, used through the ALB, crash-tested, destroyed and re-applied; destroyed between demos.
+     Never link the ALB URL (it only exists during demos and only accepts Karthik's IP).
+     HTTP only, no authentication: never claim HTTPS, WAF, Multi-AZ RDS or production use. -->
+
+- **Status:** Completed · deployed and tested, destroyed between demos to save cost
+- **Group:** Completed work
+- **Tagline:** A request tracker for engineering teams, running on a three-tier AWS stack that one terraform apply builds from zero and one terraform destroy removes.
+- **Description:** I built the infrastructure and the app: a VPC across two Availability Zones with public, private app and private database subnets; an Application Load Balancer in front of an EC2 Auto Scaling Group running a FastAPI container; RDS PostgreSQL and S3 for data. It is all Terraform modules with remote state, and infrastructure changes go through pull requests with automated checks.
+- **Note:** Destroyed between demos to keep cost near zero; rebuilding takes one command. HTTP only for now (no domain or certificate), and the app has no login yet, so the load balancer only accepts my IP address.
+- **Highlights:**
+  - Least-privilege IAM: the EC2 role can reach two S3 prefixes, one ECR repository, one log group and one secret, and reads the database password from Secrets Manager. GitHub Actions signs in with OIDC: no AWS keys stored anywhere.
+  - Chained security groups: load balancer → app on port 8000 → PostgreSQL on 5432, each tier accepting only the one before it. No SSH and no public IPs on EC2; admin access through SSM.
+  - Self-healing, tested: I stopped the app container: the health check failed, the Auto Scaling Group replaced the instance, and a CloudWatch alarm emailed me.
+  - Reproducible: built from zero, destroyed and rebuilt with no manual steps. Every infrastructure pull request runs fmt, validate, tflint, a Checkov security scan and a read-only plan.
+- **Role:** Solo
+- **Tech:** Terraform, AWS VPC, EC2 Auto Scaling, Application Load Balancer, RDS PostgreSQL, S3, IAM, Secrets Manager, CloudWatch, SNS, ECR, SSM Session Manager, Docker, Python 3.12, FastAPI, SQLAlchemy, Alembic, pytest, GitHub Actions (OIDC), tflint, Checkov
+- **Live URL:** none (destroyed between demos)
+- **Repo URL:** https://github.com/naraianlegrand/aws-3tier-engops-portal <!-- private until Karthik makes it public; renders as "Private repo" -->
+- **Screenshot(s):** [pending: Step 9 screenshots from the repo's docs/screenshots/]
+
 ### Serverless AI Resume Tailor API
+
+<!-- Moved from featured to the collapsed project list on 2026-11-09. -->
 
 - **Status:** Implemented and tested locally. AWS Lambda deployment is planned, not live.
 - **Group:** Completed work
@@ -182,18 +208,6 @@ I enjoy turning complex problems into practical solutions, combining analytical 
 - **Live URL:** n/a
 - **Repo URL:** [pending recovery]
 - **Screenshot(s):** portfolio-assets/Springer_Scopus Paper.png
-
-### AWS 3-Tier Architecture with Terraform
-
-<!-- LOW PRIORITY. Details and diagram not recovered. Keep minimal; do not invent resources, modules, networking or outcomes. -->
-
-- **Status:** In Progress
-- **Group:** Work in progress
-- **Tagline:** A three-tier web application architecture on AWS, defined with Terraform.
-- **Description:** Designing a three-tier web application architecture on AWS as infrastructure-as-code. Details will be added as the project documentation is recovered.
-- **Tech (planned):** Terraform, AWS <!-- earlier notes listed EC2, ALB, RDS, S3, VPC, IAM: unverified, do not publish as implemented -->
-- **Repo URL:** [pending recovery]
-- **Architecture diagram:** [pending recovery]
 
 ### Raspberry Pi JARVIS
 
@@ -290,12 +304,12 @@ I enjoy turning complex problems into practical solutions, combining analytical 
 
 - **Languages:** Python, Java, SQL, JavaScript, HTML/CSS
 - **Backend & APIs:** FastAPI, Pydantic, HTTPX, asyncio, Flask, Play Framework, Akka, WebSockets, REST APIs, PostgreSQL
-- **Cloud & DevOps:** AWS (EC2, S3, Lambda via Mangum, S3 static hosting), Cloudflare Pages, Docker, Git, GitHub Actions, CI/CD, Linux/Unix
+- **Cloud & DevOps:** AWS (EC2, S3, RDS, VPC, IAM, ALB, Auto Scaling, CloudWatch, Lambda via Mangum, S3 static hosting), Terraform, Cloudflare Pages, Docker, Git, GitHub Actions (OIDC), CI/CD, Checkov, Linux/Unix <!-- RDS/VPC/IAM/ALB/Auto Scaling/CloudWatch/Terraform/Checkov/OIDC backed by AWS 3-Tier (deployed and tested 2026-11) -->
 - **AI & Data:** ONNX Runtime, AMD Ryzen AI (NPU), INT8 quantization (AMD Quark), YOLOv8n-pose, OpenCV, NumPy, Gemini API, machine learning (regression models), data analysis <!-- NPU/ONNX/OpenCV etc. backed by Sloucher -->
 - **Frontend & desktop:** React, HTML5, CSS3, Tkinter, pystray, PyInstaller, Inno Setup
 - **Quality:** Manual and automated testing, pytest, code reviews, Sonar, Javadoc
 - **Practices:** Object-oriented design, Agile, software project management, requirements analysis, risk management
-- **Currently learning:** Terraform, AWS Solutions Architect – Associate
+- **Currently learning:** AWS Solutions Architect – Associate <!-- Terraform moved to Cloud & DevOps once AWS 3-Tier Phase 0 was done -->
 
 ---
 

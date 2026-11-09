@@ -116,8 +116,9 @@ const en = {
   projectsTitle: 'Projects',
   projectsIntro: 'Featured work first, then academic, learning and in-progress projects. Every card says where the project actually stands.',
 
-  // Sloucher first, then the Resume Tailor API.
+  // Sloucher first, then AWS 3-Tier. Everything else is in `projects`, collapsed behind "Show all".
   // Sloucher facts and numbers come from portfolio-assets/portfolio_Sloucher_Project/SLOUCHER_PORTFOLIO_BRIEF.md (measured).
+  // AWS 3-Tier facts come from the aws-3tier-engops-portal repo README and ADRs (deployed, tested, destroyed).
   featured: [
     {
       id: 'sloucher',
@@ -150,8 +151,36 @@ const en = {
       ],
     },
     {
-      id: 'resume-tailor',
+      id: 'aws-3-tier',
       variant: 'default',
+      name: 'AWS 3-Tier Architecture with Terraform',
+      status: 'Completed · deployed and tested, destroyed between demos to save cost',
+      group: 'Completed work',
+      tagline:
+        'A request tracker for engineering teams, running on a three-tier AWS stack that one terraform apply builds from zero and one terraform destroy removes.',
+      description:
+        'I built the infrastructure and the app: a VPC across two Availability Zones with public, private app and private database subnets; an Application Load Balancer in front of an EC2 Auto Scaling Group running a FastAPI container; RDS PostgreSQL and S3 for data. It is all Terraform modules with remote state, and infrastructure changes go through pull requests with automated checks.',
+      note: 'Destroyed between demos to keep cost near zero; rebuilding takes one command. HTTP only for now (no domain or certificate), and the app has no login yet, so the load balancer only accepts my IP address.',
+      highlights: [
+        { lead: 'Least-privilege IAM', text: 'The EC2 role can reach two S3 prefixes, one ECR repository, one log group and one secret, and reads the database password from Secrets Manager. GitHub Actions signs in with OIDC: no AWS keys stored anywhere.' },
+        { lead: 'Chained security groups', text: 'Load balancer → app on port 8000 → PostgreSQL on 5432, each tier accepting only the one before it. No SSH and no public IPs on EC2; admin access through SSM.' },
+        { lead: 'Self-healing, tested', text: 'I stopped the app container: the health check failed, the Auto Scaling Group replaced the instance, and a CloudWatch alarm emailed me.' },
+        { lead: 'Reproducible', text: 'Built from zero, destroyed and rebuilt with no manual steps. Every infrastructure pull request runs fmt, validate, tflint, a Checkov security scan and a read-only plan.' },
+      ],
+      role: 'Solo',
+      tech: ['Terraform', 'AWS VPC', 'EC2 Auto Scaling', 'Application Load Balancer', 'RDS PostgreSQL', 'S3', 'IAM', 'Secrets Manager', 'CloudWatch', 'SNS', 'ECR', 'SSM Session Manager', 'Docker', 'Python 3.12', 'FastAPI', 'SQLAlchemy', 'Alembic', 'pytest', 'GitHub Actions (OIDC)', 'tflint', 'Checkov'],
+      repo: { url: 'https://github.com/naraianlegrand/aws-3tier-engops-portal', private: true },
+      live: null, // destroyed between demos: never link the ALB URL
+      images: [], // Step 9 screenshots go here once processed into public/assets/
+    },
+  ],
+
+  // `more: true` items (here and in `experience`) start collapsed behind a "Show all" button.
+  // All projects are collapsed: only the two featured cards show by default.
+  projects: [
+    {
+      id: 'resume-tailor',
+      more: true,
       name: 'Serverless AI Resume Tailor API',
       status: 'Tested locally · Lambda deployment planned',
       group: 'Completed work',
@@ -173,12 +202,9 @@ const en = {
         },
       ],
     },
-  ],
-
-  // `more: true` items (here and in `experience`) start collapsed behind a "Show all" button.
-  projects: [
     {
       id: 'tubelytics',
+      more: true,
       name: 'TubeLytics',
       subtitle: 'High-Volume Data Integration Platform',
       status: 'Completed · SOEN 6441, Fall 2024',
@@ -204,6 +230,7 @@ const en = {
     },
     {
       id: 'academic-advisor',
+      more: true,
       name: 'AI-Based Academic Advisor',
       status: 'Completed · SOEN 6841, Fall 2024',
       group: 'Academic proposal',
@@ -258,20 +285,6 @@ const en = {
       images: [
         { src: A + 'springer-paper.webp', alt: 'Springer Link page for "A Regression Analysis of iPhone 11 Pricing Factors"', width: 1400, height: 758 },
       ],
-    },
-    {
-      id: 'aws-3-tier',
-      more: true,
-      name: 'AWS 3-Tier Architecture',
-      subtitle: 'with Terraform',
-      status: 'In Progress',
-      group: 'Work in progress',
-      tagline: 'A three-tier web application architecture on AWS, defined with Terraform.',
-      description: 'Designing a three-tier web application architecture on AWS as infrastructure-as-code. More detail coming as the project develops.',
-      tech: ['Terraform', 'AWS'],
-      repo: null,
-      live: null,
-      images: [],
     },
   ],
 
@@ -357,12 +370,12 @@ const en = {
   skills: [
     { group: 'Languages', items: ['Python', 'Java', 'SQL', 'JavaScript', 'HTML/CSS'] },
     { group: 'Backend & APIs', items: ['FastAPI', 'Pydantic', 'HTTPX', 'asyncio', 'Flask', 'Play Framework', 'Akka', 'WebSockets', 'REST APIs', 'PostgreSQL'] },
-    { group: 'Cloud & DevOps', items: ['AWS (EC2, S3, Lambda)', 'S3 static hosting', 'Cloudflare Pages', 'Docker', 'Git', 'GitHub Actions', 'CI/CD', 'Linux/Unix'] },
+    { group: 'Cloud & DevOps', items: ['AWS (EC2, S3, RDS, VPC, IAM, ALB, Auto Scaling, CloudWatch, Lambda)', 'Terraform', 'S3 static hosting', 'Cloudflare Pages', 'Docker', 'Git', 'GitHub Actions (OIDC)', 'CI/CD', 'Checkov', 'Linux/Unix'] },
     { group: 'AI & Data', items: ['ONNX Runtime', 'AMD Ryzen AI (NPU)', 'INT8 quantization (AMD Quark)', 'YOLOv8n-pose', 'OpenCV', 'NumPy', 'Gemini API', 'Regression models', 'Data analysis'] },
     { group: 'Frontend & desktop', items: ['React', 'HTML5', 'CSS3', 'Tkinter', 'pystray', 'PyInstaller', 'Inno Setup'] },
     { group: 'Quality', items: ['Manual & automated testing', 'pytest', 'Code reviews', 'Sonar', 'Javadoc'] },
     { group: 'Practices', items: ['Object-oriented design', 'Agile', 'Project management', 'Requirements analysis', 'Risk management'] },
-    { group: 'Currently learning', items: ['Terraform', 'AWS Solutions Architect – Associate'] },
+    { group: 'Currently learning', items: ['AWS Solutions Architect – Associate'] },
   ],
 
   educationTitle: 'Education',

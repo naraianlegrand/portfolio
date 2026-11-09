@@ -162,6 +162,7 @@ function ProjectCard({ p, ui, publications, hidden }) {
       </h3>
       <p className="mt-3 text-paper/85">{p.tagline}</p>
       <p className="mt-3 text-sm text-muted leading-relaxed">{p.description}</p>
+      {p.note && <p className="mt-3 text-sm text-muted border-l-2 border-ember/60 pl-3">{p.note}</p>}
 
       {p.achievement && (
         <p className="mt-4 rounded-xl bg-ember-soft p-3 text-sm text-paper">

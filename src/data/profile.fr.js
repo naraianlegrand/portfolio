@@ -118,6 +118,26 @@ export const frOverrides = {
       ],
     },
     {
+      name: 'Architecture AWS à trois niveaux avec Terraform',
+      status: 'Terminé · déployé et testé, détruit entre les démos pour réduire les coûts',
+      group: 'Projet terminé',
+      tagline:
+        "Un outil de suivi des demandes pour les équipes d'ingénierie, sur une infrastructure AWS à trois niveaux qu'une seule commande terraform apply construit à partir de zéro et qu'une commande terraform destroy supprime.",
+      description:
+        "J'ai conçu l'infrastructure et l'application : un VPC réparti sur deux zones de disponibilité, avec des sous-réseaux publics, applicatifs privés et de base de données privés; un équilibreur de charge d'application devant un groupe Auto Scaling EC2 qui exécute un conteneur FastAPI; RDS PostgreSQL et S3 pour les données. Tout est défini en modules Terraform avec un état distant, et les changements d'infrastructure passent par des demandes de tirage (pull requests) avec des vérifications automatisées.",
+      note: "Détruite entre les démos pour garder les coûts près de zéro; la reconstruire ne prend qu'une commande. HTTP seulement pour l'instant (aucun domaine ni certificat), et l'application n'a pas encore de connexion : l'équilibreur de charge n'accepte donc que mon adresse IP.",
+      highlights: [
+        { lead: 'IAM à privilèges minimaux', text: "Le rôle EC2 n'accède qu'à deux préfixes S3, un dépôt ECR, un groupe de journaux et un secret, et lit le mot de passe de la base de données dans Secrets Manager. GitHub Actions s'authentifie avec OIDC : aucune clé AWS n'est stockée nulle part." },
+        { lead: 'Groupes de sécurité en chaîne', text: "Équilibreur de charge → application sur le port 8000 → PostgreSQL sur le port 5432, chaque niveau n'acceptant que le précédent. Aucun SSH ni adresse IP publique sur EC2; l'accès d'administration passe par SSM." },
+        { lead: 'Autoréparation testée', text: "J'ai arrêté le conteneur de l'application : la vérification de l'état a échoué, le groupe Auto Scaling a remplacé l'instance et une alarme CloudWatch m'a envoyé un courriel." },
+        { lead: 'Reproductible', text: "Construite à partir de zéro, détruite puis reconstruite sans aucune étape manuelle. Chaque demande de tirage d'infrastructure exécute fmt, validate, tflint, une analyse de sécurité Checkov et un plan en lecture seule." },
+      ],
+      role: 'En solo',
+    },
+  ],
+
+  projects: [
+    {
       status: 'Testé localement · déploiement Lambda prévu',
       group: 'Projet terminé',
       tagline:
@@ -130,9 +150,6 @@ export const frOverrides = {
         { alt: 'Swagger UI affichant une réponse 200 du point de terminaison local /api/v1/tailor : score de correspondance de 48, mots-clés manquants et puces adaptées' },
       ],
     },
-  ],
-
-  projects: [
     {
       subtitle: "Plateforme d'intégration de données à haut volume",
       status: 'Terminé · SOEN 6441, automne 2024',
@@ -190,14 +207,6 @@ export const frOverrides = {
       description:
         "PennyWise est un projet de prédiction de prix lié à des recherches sur la tarification des produits par régression et l'aide à l'achat. Ces recherches ont exploré l'historique des prix de l'iPhone 11 sur Amazon et des algorithmes de régression par apprentissage automatique pour prédire les prix, afin d'aider les consommateurs à prendre des décisions d'achat plus éclairées.",
       images: [{ alt: 'Page Springer Link de « A Regression Analysis of iPhone 11 Pricing Factors »' }],
-    },
-    {
-      name: 'Architecture AWS à trois niveaux',
-      subtitle: 'avec Terraform',
-      status: 'En cours',
-      group: 'Travail en cours',
-      tagline: "Une architecture d'application Web à trois niveaux sur AWS, définie avec Terraform.",
-      description: "Conception d'une architecture d'application Web à trois niveaux sur AWS sous forme d'infrastructure en tant que code. Plus de détails à venir au fil du projet.",
     },
   ],
 
@@ -272,7 +281,7 @@ export const frOverrides = {
   skills: [
     { group: 'Langages' },
     { group: 'Back-end et API', items: ['FastAPI', 'Pydantic', 'HTTPX', 'asyncio', 'Flask', 'Play Framework', 'Akka', 'WebSockets', 'API REST', 'PostgreSQL'] },
-    { group: 'Infonuagique et DevOps', items: ['AWS (EC2, S3, Lambda)', 'Hébergement statique S3', 'Cloudflare Pages', 'Docker', 'Git', 'GitHub Actions', 'CI/CD', 'Linux/Unix'] },
+    { group: 'Infonuagique et DevOps', items: ['AWS (EC2, S3, RDS, VPC, IAM, ALB, Auto Scaling, CloudWatch, Lambda)', 'Terraform', 'Hébergement statique S3', 'Cloudflare Pages', 'Docker', 'Git', 'GitHub Actions (OIDC)', 'CI/CD', 'Checkov', 'Linux/Unix'] },
     { group: 'IA et données', items: ['ONNX Runtime', 'AMD Ryzen AI (NPU)', 'Quantification INT8 (AMD Quark)', 'YOLOv8n-pose', 'OpenCV', 'NumPy', 'API Gemini', 'Modèles de régression', 'Analyse de données'] },
     { group: 'Front-end et bureau' },
     { group: 'Qualité', items: ['Tests manuels et automatisés', 'pytest', 'Revues de code', 'Sonar', 'Javadoc'] },
