@@ -221,7 +221,7 @@ export const frOverrides = {
     {
       role: 'Analyste en automatisation IA et données',
       dates: 'août 2026 – oct. 2026',
-      meta: 'Temps partiel, non rémunéré',
+      meta: 'Temps partiel',
       summary:
         "J'ai contribué aux opérations et à l'approvisionnement tout en soutenant l'acquisition de clients pour des services de logiciels CRM et d'intégration de l'IA. J'ai fait de la prospection auprès de clients potentiels, aidé à repérer des occasions d'affaires et contribué à l'analyse de données et à des initiatives d'automatisation par l'IA.",
       highlights: ['Communiqué avec des centaines de clients potentiels dans le cadre de la prospection'],
@@ -239,7 +239,7 @@ export const frOverrides = {
       dates: "févr. 2026 – aujourd'hui",
       meta: 'Temps partiel · Montréal, à distance',
       summary:
-        'Sollicitation bilingue (anglais/français) de donateurs partout au Canada pour des organismes comme la Croix-Rouge canadienne et Cœur + AVC.',
+        'Sollicitation bilingue (anglais/français) de donateurs partout au Canada pour des organismes comme la Croix-Rouge canadienne, le HCR et Cœur + AVC.',
       highlights: [
         'Géré un volume élevé de communications bilingues (anglais/français) avec la clientèle',
         'Analysé les données opérationnelles et les indicateurs de performance quotidiens pour gérer les horaires hebdomadaires',
@@ -258,10 +258,9 @@ export const frOverrides = {
       dates: 'juin 2023 – mars 2024',
       meta: 'Bengaluru, Inde · Hybride',
       highlights: [
-        'Développé et intégré des applications back-end et des API évolutives en Java et en Python dans un environnement Linux/Unix.',
-        "Collaboré directement avec des analystes et des équipes d'ingénierie multidisciplinaires pour mettre en œuvre des améliorations logicielles et corriger des vulnérabilités de cybersécurité.",
-        "Participé à des revues rigoureuses de conception et de code, en veillant au respect des pratiques d'amélioration continue et à la qualité du travail livré.",
-        "Contribué aux flux de travail CI/CD avec Git, documenté le développement des programmes et participé activement aux discussions de l'équipe Agile.",
+        "Développé et testé des composants logiciels et des scripts d'automatisation en Python dans un environnement Linux.",
+        "Validé l'intégrité des données dans des bases PostgreSQL/SQL et effectué des tests unitaires et de régression avant la mise en production.",
+        "Utilisé Git avec des revues de code au sein d'équipes Agile et rédigé la documentation technique des composants du système.",
       ],
     },
     {
@@ -269,7 +268,7 @@ export const frOverrides = {
       dates: 'mars 2023 – mai 2023',
       meta: 'Bengaluru, Inde · Hybride',
       highlights: [
-        "Collaboré à un modèle de maintenance prédictive qui a réduit de 20 % les temps d'arrêt de l'équipement",
+        "Créé des étapes ETL en Python qui ont nettoyé et corrigé les données du modèle de maintenance prédictive de l'équipe, lequel a réduit de 20 % les temps d'arrêt de l'équipement.",
         'Automatisé des flux de traitement de données basés sur S3 pour réduire le travail manuel et simplifier les processus opérationnels.',
         'Créé un assistant personnel JARVIS en Python fonctionnant sur un Raspberry Pi',
       ],
