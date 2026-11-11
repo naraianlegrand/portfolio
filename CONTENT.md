@@ -41,7 +41,7 @@ ACCURACY RULES (from the consolidated handoff, 2026-10-12)
 - **Open to:** Software engineering, cloud, AI automation and data-related engineering roles. Full-time and part-time roles, including new-grad and contract positions.
 - **Photo (hero):** public/images/hero-480.webp · public/images/hero-720.webp · public/images/hero-1000.webp <!-- from portfolio-assets/Hero Image.jpeg (Place des Arts, Montréal); WebP, metadata stripped -->
 - **Photo (About):** public/images/grad-480.webp · public/images/grad-800.webp — caption "Concordia convocation, 2026" <!-- from portfolio-assets/Karthik_Grad.jpg, cropped, metadata stripped -->
-- **Resume PDF (EN):** public/resume/Karthikeyan-Umesh-Resume.pdf <!-- copied from portfolio-assets/General_resume_without mobile_number.pdf (phone-free, checked 2026-10-14). Linked from the hero and the Contact links. Resume_Karthik_General.pdf contains the phone number: never link it -->
+- **Resume PDF (EN):** public/resume/Karthikeyan-Umesh-Resume.pdf <!-- copied from portfolio-assets/Karthikeyan-Umesh-Resume_WEBSITE.pdf (phone-free, checked 2026-11-11). Linked from the hero and the Contact links. Resume_Karthik_General.pdf contains the phone number: never link it -->
 - **Resume PDF (FR):** none yet; the FR site links the English PDF, labelled "CV (PDF, en anglais)"
 
 <!-- Phone number stays off the public site. Email + contact form only. -->
@@ -230,7 +230,7 @@ I enjoy turning complex problems into practical solutions, combining analytical 
 <!-- Descriptive title, not a formally assigned one. No invented conversion or growth metrics. -->
 
 - **Dates:** Aug 2026 – Oct 2026 <!-- ended Oct 1, 2026 -->
-- **Arrangement:** Part-time, unpaid
+- **Arrangement:** Part-time
 - **Location:** [CITY / Remote]
 - **Company URL:** [URL]
 - **Summary:** Contributed to business operations and procurement while supporting client acquisition for CRM software and AI integration services. Conducted outreach to prospective clients, helped identify business opportunities, and contributed to data analysis and AI-driven automation initiatives.
@@ -252,7 +252,7 @@ I enjoy turning complex problems into practical solutions, combining analytical 
 - **Arrangement:** Part-time
 - **Location:** Montréal, QC · Remote
 - **Company URL:** https://fundraisingdirect.ca/clients-success/
-- **Summary:** Bilingual (EN/FR) outbound outreach to donors across Canada for organizations including the Canadian Red Cross and the Heart & Stroke Foundation.
+- **Summary:** Bilingual (EN/FR) outbound outreach to donors across Canada for organizations including the Canadian Red Cross, UNHCR, and the Heart & Stroke Foundation.
 - **Highlights (from resume):**
   - Managed high-volume, bilingual (English/French) client communications
   - Analyzed operational data and daily performance metrics to manage weekly scheduling
@@ -274,18 +274,17 @@ I enjoy turning complex problems into practical solutions, combining analytical 
 - **Dates:** Jun 2023 – Mar 2024
 - **Location:** Bengaluru, India · Hybrid
 - **Highlights (as supplied; add nothing):**
-  - Developed and integrated backend applications and scalable APIs using Java and Python within a Linux/Unix environment.
-  - Collaborated directly with cross-functional analysts and engineering teams to implement software enhancements and resolve cybersecurity vulnerabilities.
-  - Participated in rigorous design and code reviews, ensuring adherence to continuous improvement practices and high-quality output.
-  - Contributed to CI/CD workflows utilizing Git, documenting program development and actively participating in Agile team discussions.
-- **Tech:** Java, Python, Linux/Unix, Git, CI/CD
+  - Developed and tested Python software components and automation scripts in a Linux environment.
+  - Validated data integrity in PostgreSQL/SQL databases and ran unit and regression testing before release.
+  - Used Git with code reviews in Agile teams and authored technical documentation for system components.
+- **Tech:** Python, Linux, PostgreSQL/SQL, Git
 
 ### Machine Learning and Automation Intern — Inventeron Technologies
 
 - **Dates:** Mar 2023 – May 2023
 - **Location:** Bengaluru, India · Hybrid
 - **Highlights:**
-  - Collaborated on a predictive maintenance model that cut equipment downtime by 20% <!-- per LinkedIn -->
+  - Built Python ETL steps that cleaned and corrected data for the team's predictive maintenance model, which cut equipment downtime by 20%. <!-- per LinkedIn; wording per Karthik 2026-11-11 -->
   - Automated S3-based data processing workflows to reduce manual effort and streamline operational processes. <!-- Never publish a percentage for this -->
   - Built a Python-based JARVIS personal assistant running on a Raspberry Pi
 - **Tech:** Python, Machine Learning, AWS S3, Raspberry Pi, Jira
