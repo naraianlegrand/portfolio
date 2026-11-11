@@ -57,6 +57,7 @@ export const frOverrides = {
     { label: 'Publications' },
     { label: 'Au-delà du code' },
     { label: 'Contact' },
+    { label: 'Blogue' },
   ],
 
   hero: {

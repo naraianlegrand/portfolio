@@ -22,7 +22,7 @@ ACCURACY RULES (from the consolidated handoff, 2026-10-12)
 
 ## Site structure
 
-- **Navigation:** Home · About · Projects · Experience · Skills · Publications · Beyond Code · Contact
+- **Navigation:** Home · About · Projects · Experience · Skills · Publications · Beyond Code · Contact · Blog (links to https://blog.karthikeyanumesh.com; FR: Blogue)
 - **Homepage spotlight:** only two featured projects: Sloucher first (Released · v0.2.0), then AWS 3-Tier Architecture with Terraform
 - **Project grouping:** clearly distinguish completed work, academic proposals, learning projects and work in progress
 - **Collapsed by default ("Show all" button):** every non-featured project (Resume Tailor, TubeLytics, Academic Advisor, Cloud Tech, PennyWise); experience Exam Invigilator, NetEase, Knowbility Media. Set `more: true` in profile.js to change.

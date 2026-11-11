@@ -60,6 +60,8 @@ const en = {
     { id: 'publications', label: 'Publications' },
     { id: 'beyond', label: 'Beyond Code' },
     { id: 'contact', label: 'Contact' },
+    // External link (no section on this page): Navbar uses href instead of #id.
+    { id: 'blog', label: 'Blog', href: 'https://blog.karthikeyanumesh.com' },
   ],
 
   hero: {

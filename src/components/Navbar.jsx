@@ -35,12 +35,13 @@ export default function Navbar() {
   const links = t.nav.map((n) => (
     <li key={n.id}>
       <a
-        href={`#${n.id}`}
+        href={n.href ?? `#${n.id}`}
         onClick={() => setOpen(false)}
-        aria-current={active === n.id ? 'true' : undefined}
-        className={`transition-colors hover:text-paper ${active === n.id ? 'text-paper' : 'text-muted'}`}
+        aria-current={!n.href && active === n.id ? 'true' : undefined}
+        className={`transition-colors hover:text-paper ${!n.href && active === n.id ? 'text-paper' : 'text-muted'}`}
       >
         {n.label}
+        {n.href && <span aria-hidden="true"> ↗</span>}
       </a>
     </li>
   ))
