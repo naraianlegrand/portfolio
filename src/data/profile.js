@@ -6,7 +6,7 @@ import { frOverrides } from './profile.fr.js'
 
 const A = '/assets/'
 const I = '/images/' // photos: WebP, resized, all metadata stripped
-const RESUME = '/resume/Karthikeyan-Umesh-Resume.pdf' // from portfolio-assets/General_resume_without mobile_number.pdf
+const RESUME = '/resume/Karthikeyan-Umesh-Resume.pdf' // from portfolio-assets/Karthikeyan-Umesh-Resume_WEBSITE.pdf
 const IBM_BADGE ={ src: A + 'ibm-logo.webp', alt: 'IBM logo' }
 const FILM_POSTER_ALT =
   'Poster for the short film Delusions of Grandeur, directed by Karthikeyan Umesh, with laurels for Official Selection at CARV Karnataka 2020, 2nd Best Short Film at IIM Shortcuts 2019 and 3rd Best Short Film at Estrade St. Claret 2020'
@@ -81,7 +81,7 @@ const en = {
       { label: 'See my work', href: '#projects' },
       { label: 'Get in touch', href: '#contact' },
     ],
-    // Resume button renders only when this is set. Must be a phone-free PDF (checked 2026-10-14: text, metadata and links).
+    // Resume button renders only when this is set. Must be a phone-free PDF (checked 2026-11-11: text, metadata and links).
     resume: RESUME,
     resumeLabel: 'Resume (PDF)',
   },
@@ -299,7 +299,7 @@ const en = {
       role: 'AI Automation & Data Analyst',
       org: 'Boston Soft Design',
       dates: 'Aug 2026 – Oct 2026',
-      meta: 'Part-time, unpaid',
+      meta: 'Part-time',
       summary:
         'Contributed to business operations and procurement while supporting client acquisition for CRM software and AI integration services. Conducted outreach to prospective clients, helped identify business opportunities, and contributed to data analysis and AI-driven automation initiatives.',
       highlights: ['Contacted hundreds of prospective clients through outreach'],
@@ -320,7 +320,7 @@ const en = {
       dates: 'Feb 2026 – Present',
       meta: 'Part-time · Montréal, remote',
       summary:
-        'Bilingual (EN/FR) outbound outreach to donors across Canada for organizations including the Canadian Red Cross and the Heart & Stroke Foundation.',
+        'Bilingual (EN/FR) outbound outreach to donors across Canada for organizations including the Canadian Red Cross, UNHCR, and the Heart & Stroke Foundation.',
       highlights: [
         'Managed high-volume, bilingual (English/French) client communications',
         'Analyzed operational data and daily performance metrics to manage weekly scheduling',
@@ -343,10 +343,9 @@ const en = {
       dates: 'Jun 2023 – Mar 2024',
       meta: 'Bengaluru, India · Hybrid',
       highlights: [
-        'Developed and integrated backend applications and scalable APIs using Java and Python within a Linux/Unix environment.',
-        'Collaborated directly with cross-functional analysts and engineering teams to implement software enhancements and resolve cybersecurity vulnerabilities.',
-        'Participated in rigorous design and code reviews, ensuring adherence to continuous improvement practices and high-quality output.',
-        'Contributed to CI/CD workflows utilizing Git, documenting program development and actively participating in Agile team discussions.',
+        'Developed and tested Python software components and automation scripts in a Linux environment.',
+        'Validated data integrity in PostgreSQL/SQL databases and ran unit and regression testing before release.',
+        'Used Git with code reviews in Agile teams and authored technical documentation for system components.',
       ],
     },
     {
@@ -355,7 +354,7 @@ const en = {
       dates: 'Mar 2023 – May 2023',
       meta: 'Bengaluru, India · Hybrid',
       highlights: [
-        'Collaborated on a predictive maintenance model that cut equipment downtime by 20%',
+        "Built Python ETL steps that cleaned and corrected data for the team's predictive maintenance model, which cut equipment downtime by 20%.",
         'Automated S3-based data processing workflows to reduce manual effort and streamline operational processes.',
         'Built a Python-based JARVIS personal assistant running on a Raspberry Pi',
       ],
