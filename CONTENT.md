@@ -371,6 +371,7 @@ I enjoy turning complex problems into practical solutions, combining analytical 
 |---------------|--------|------|---------------------|-------|
 | AWS Certified Cloud Practitioner | Amazon Web Services | Dec 2024 (expires Dec 2027) | [URL] | portfolio-assets/aws_badge.png |
 | AWS Certified Solutions Architect – Associate | Amazon Web Services | In progress | — | — |
+| Databricks Fundamentals (Academy Accreditation) | Databricks Academy | Nov 21, 2026 | https://www.credential.net/0caf9ee2-a6f2-4ac7-9a72-42516be0f582 | portfolio-assets/credential-w3cvc-0caf9ee2-a6f2-4ac7-9a72-42516be0f582.json (no badge yet) |
 | AWS re/Start (12-week program) | AWS, delivered by Vinsys IT Services | Sep – Dec 2023 (certificate Dec 2023) | [URL] | [path] |
 | IBM Certified Data Science – Data Science 101 (DS0101EN) | IBM | Nov 2022 | ID b2b41ac632984836b23d29a1cf2f69a3 | [PDF pending] |
 | IBM Certified Data Science – Data Science Tools (DS0105EN) | IBM | Nov 2022 | ID 9ef2d4e376064782a44bb08211df5fd4 | portfolio-assets/ibm 1 cert.pdf |

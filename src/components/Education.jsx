@@ -68,6 +68,11 @@ export default function Education() {
                     {t.ui.viewCredential} (PDF)
                   </a>
                 )}
+                {c.url && (
+                  <a href={c.url} target="_blank" rel="noreferrer" className="link-u mt-2 inline-block text-xs">
+                    {t.ui.verifyCredential}
+                  </a>
+                )}
               </div>
             </li>
           ))}

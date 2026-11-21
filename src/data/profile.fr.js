@@ -25,6 +25,7 @@ export const frOverrides = {
     myContributions: 'Mes contributions',
     relatedPapers: 'Recherche associée',
     viewCredential: 'Voir le certificat',
+    verifyCredential: 'Vérifier le certificat',
     credentialId: 'Identifiant du certificat',
     backToTop: 'Retour en haut',
     readStory: "Lire l'histoire",
@@ -329,6 +330,7 @@ export const frOverrides = {
   certifications: [
     { date: "déc. 2024 · valide jusqu'en déc. 2027", badge: { alt: 'Badge AWS Certified Cloud Practitioner' } },
     { date: 'En cours' },
+    { date: 'nov. 2026' },
     { issuer: 'AWS, offert par Vinsys IT Services', date: 'sept. – déc. 2023', detail: 'Programme de 12 semaines : EC2, S3, RDS, IAM, VPC, Lambda, CloudWatch, Linux, Jenkins' },
     { date: 'nov. 2022', badge: IBM_BADGE },
     { date: 'nov. 2022', badge: IBM_BADGE },
