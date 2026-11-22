@@ -153,3 +153,26 @@ html.lenis body {
     opacity: 0.5;
   }
 }
+
+/* New-cert toast: slides up from the corner; reduced motion gets the global near-zero durations. */
+.toast {
+  transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.toast[data-state='hidden'] {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  pointer-events: none;
+}
+.toast-timer {
+  transform-origin: left;
+  animation: toast-timer var(--toast-ms) linear forwards;
+}
+.toast:hover .toast-timer,
+.toast:focus-within .toast-timer {
+  animation-play-state: paused;
+}
+@keyframes toast-timer {
+  to {
+    transform: scaleX(0);
+  }
+}

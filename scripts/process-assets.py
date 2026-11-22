@@ -64,3 +64,21 @@ mifi = Image.open(src / 'mifi_logo.png').convert('RGBA')
 flat = Image.new('RGB', mifi.size, (255, 255, 255))
 flat.paste(mifi, mask=mifi.split()[3])
 save(tile(flat, 96, 10), assets / 'mifi-logo.webp', q=90)
+
+# Databricks Fundamentals badge (transparent PNG, off-centre in its canvas): square white tile, 128px (shown at 64px).
+db = Image.open(src / 'Databricks_Certification.png').convert('RGBA')
+flat = Image.new('RGB', db.size, (255, 255, 255))
+flat.paste(db, mask=db.split()[3])
+save(tile(flat, 128, 8, square=True), assets / 'databricks-fundamentals-badge.webp', q=90)
+
+# New-cert toast animation: animated WebP, 320w, metadata stripped, loops like the source GIF.
+gif = Image.open(src / 'Celebration.gif')
+frames, durations = [], []
+for i in range(gif.n_frames):
+    gif.seek(i)
+    f = clean(gif)
+    frames.append(f.resize((320, round(f.height * 320 / f.width)), Image.LANCZOS))
+    durations.append(gif.info.get('duration', 60))
+out = assets / 'celebration.webp'
+frames[0].save(out, 'WEBP', save_all=True, append_images=frames[1:], duration=durations, loop=0, quality=70, method=6)
+print(out.name, frames[0].size, len(frames), 'frames', out.stat().st_size // 1024, 'KB')

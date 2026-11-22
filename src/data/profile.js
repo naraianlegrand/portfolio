@@ -424,11 +424,25 @@ const en = {
     { term: 'Winter 2026', courses: [['SOEN 6461', 'Software Design Methodologies']] },
   ],
 
+  // Toast shown once per visitor after page load; set to null to remove. Stops showing after `until`.
+  announcement: {
+    id: 'databricks-fundamentals-2026-11',
+    until: '2027-01-31',
+    label: 'New certification',
+    text: 'Databricks Fundamentals',
+    cta: 'See certifications',
+    href: '#certifications',
+    close: 'Dismiss',
+    image: A + 'celebration.webp',
+    // Reduced motion: the still badge instead of the looping animation.
+    staticImage: A + 'databricks-fundamentals-badge.webp',
+  },
+
   certificationsTitle: 'Certifications',
   certifications: [
     { name: 'AWS Certified Cloud Practitioner', issuer: 'Amazon Web Services', date: 'Dec 2024 · valid to Dec 2027', badge: { src: A + 'aws-ccp-badge.png', alt: 'AWS Certified Cloud Practitioner badge' } },
     { name: 'AWS Certified Solutions Architect – Associate', issuer: 'Amazon Web Services', date: 'In progress' },
-    { name: 'Databricks Fundamentals (Academy Accreditation)', issuer: 'Databricks Academy', date: 'Nov 2026', url: 'https://www.credential.net/0caf9ee2-a6f2-4ac7-9a72-42516be0f582' },
+    { name: 'Databricks Fundamentals (Academy Accreditation)', issuer: 'Databricks Academy', date: 'Nov 2026', url: 'https://www.credential.net/0caf9ee2-a6f2-4ac7-9a72-42516be0f582', badge: { src: A + 'databricks-fundamentals-badge.webp', alt: 'Databricks Fundamentals badge' } },
     { name: 'AWS re/Start', issuer: 'AWS, delivered by Vinsys IT Services', date: 'Sep – Dec 2023', detail: '12-week program: EC2, S3, RDS, IAM, VPC, Lambda, CloudWatch, Linux, Jenkins' },
     { name: 'Data Science 101 (DS0101EN)', issuer: 'IBM', date: 'Nov 2022', credentialId: 'b2b41ac632984836b23d29a1cf2f69a3', badge: IBM_BADGE },
     { name: 'Data Science Tools (DS0105EN)', issuer: 'IBM', date: 'Nov 2022', credentialId: '9ef2d4e376064782a44bb08211df5fd4', file: A + 'ibm-ds0105-certificate.pdf', badge: IBM_BADGE },

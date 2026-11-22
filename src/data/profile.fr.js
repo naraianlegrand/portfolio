@@ -326,11 +326,13 @@ export const frOverrides = {
   courseworkTitle: 'Cours suivis à Concordia',
   coursework: [{ term: 'Été 2024' }, { term: 'Automne 2024' }, { term: 'Hiver 2025' }, { term: 'Automne 2025' }, { term: 'Hiver 2026' }],
 
+  announcement: { label: 'Nouvelle certification', cta: 'Voir les certifications', close: 'Fermer' },
+
   certificationsTitle: 'Certifications',
   certifications: [
     { date: "déc. 2024 · valide jusqu'en déc. 2027", badge: { alt: 'Badge AWS Certified Cloud Practitioner' } },
     { date: 'En cours' },
-    { date: 'nov. 2026' },
+    { date: 'nov. 2026', badge: { alt: 'Badge Databricks Fundamentals' } },
     { issuer: 'AWS, offert par Vinsys IT Services', date: 'sept. – déc. 2023', detail: 'Programme de 12 semaines : EC2, S3, RDS, IAM, VPC, Lambda, CloudWatch, Linux, Jenkins' },
     { date: 'nov. 2022', badge: IBM_BADGE },
     { date: 'nov. 2022', badge: IBM_BADGE },
