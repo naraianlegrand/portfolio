@@ -13,6 +13,7 @@ import Publications from './components/Publications'
 import BeyondCode from './components/BeyondCode'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import Announcement from './components/Announcement'
 
 export default function App() {
   const { t } = useLang()
@@ -38,6 +39,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <Announcement />
       <Analytics />
       <SpeedInsights />
     </>
